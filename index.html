@@ -1,14 +1,2989 @@
 <!DOCTYPE html>
+<!--
+EDIT GUIDE
+1. Replace the placeholder checkout links in the bundle options (`data-checkout`) and CTA buttons first so the page sends visitors to your real cart or checkout.
+2. Swap these image paths with your final product photography:
+   - /images/hero-side-sleeper.jpg
+   - /images/comparison-regular-pillow.jpg
+   - /images/comparison-revivealign.jpg
+3. If your offer changes, update the price, guarantee, shipping copy, and support email in the hero buy box, CTA band, and footer.
+-->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReviveAlign</title>
-    <link rel="stylesheet" href="support-legal.css">
-    <script src="site.js" defer></script>
-</head>
-<body>
-    <h1>Welcome to ReviveAlign</h1>
-    <p>Your one-stop solution for alignment and revitalization.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReviveAlign | Side Sleeper Alignment Pillow</title>
+    <meta
+      name="description"
+      content="ReviveAlign is a side-sleeper pillow made to fit between your legs, stay in place overnight, and help reduce pressure on your hips, knees, and lower back."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f6f4ef;
+        --surface: #ffffff;
+        --surface-soft: #f7f8fb;
+        --surface-strong: #eef3f8;
+        --border: rgba(23, 42, 63, 0.1);
+        --border-strong: rgba(78, 105, 135, 0.22);
+        --text: #15304a;
+        --muted: #5f7286;
+        --accent: #7893b4;
+        --accent-deep: #27496b;
+        --accent-soft: #dce7f3;
+        --success: #2e7d69;
+        --shadow-lg: 0 28px 60px rgba(21, 48, 74, 0.13);
+        --shadow-md: 0 18px 35px rgba(21, 48, 74, 0.09);
+        --shadow-sm: 0 10px 24px rgba(21, 48, 74, 0.07);
+        --shadow-xs: 0 8px 18px rgba(21, 48, 74, 0.05);
+        --radius-xl: 28px;
+        --radius-lg: 22px;
+        --radius-md: 18px;
+        --radius-sm: 14px;
+        --container: 1280px;
+        --header-height: 78px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(120, 147, 180, 0.18), transparent 28%),
+          linear-gradient(180deg, #fcfbf8 0%, #f5f2ed 46%, #f8f9fb 100%);
+        color: var(--text);
+        line-height: 1.55;
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+        padding-bottom: 0;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      .announcement-bar {
+        background: var(--accent-deep);
+        color: #f7fbff;
+        text-align: center;
+        padding: 0.78rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        backdrop-filter: blur(16px);
+        background: rgba(252, 251, 248, 0.92);
+        border-bottom: 1px solid rgba(21, 48, 74, 0.08);
+        box-shadow: 0 8px 22px rgba(21, 48, 74, 0.04);
+      }
+
+      .header-inner,
+      .container {
+        width: min(calc(100% - 2.5rem), var(--container));
+        margin: 0 auto;
+      }
+
+      .header-inner {
+        min-height: var(--header-height);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .logo {
+        font-family: "Fraunces", serif;
+        font-size: 1.65rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+
+      .logo span {
+        color: var(--accent);
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+      }
+
+      .site-nav a {
+        color: var(--muted);
+        font-weight: 700;
+        font-size: 0.94rem;
+        transition: color 160ms ease;
+      }
+
+      .site-nav a:hover,
+      .site-nav a:focus-visible {
+        color: var(--accent-deep);
+      }
+
+      .header-toggle {
+        display: none;
+        width: 46px;
+        height: 46px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.75);
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .header-toggle svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        min-height: 56px;
+        padding: 0 1.55rem;
+        border-radius: 999px;
+        border: 0;
+        font-weight: 800;
+        letter-spacing: -0.015em;
+        cursor: pointer;
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          background 180ms ease,
+          color 180ms ease;
+      }
+
+      .button:focus-visible {
+        outline: 3px solid rgba(120, 147, 180, 0.35);
+        outline-offset: 2px;
+      }
+
+      .button-primary {
+        background: linear-gradient(135deg, #173d63 0%, #315f8f 100%);
+        color: #ffffff;
+        box-shadow: 0 20px 38px rgba(25, 63, 101, 0.34);
+      }
+
+      .button-primary:hover,
+      .button-primary:focus-visible {
+        transform: translateY(-1px);
+        box-shadow: 0 24px 42px rgba(25, 63, 101, 0.34);
+      }
+
+      .button-secondary {
+        background: rgba(255, 255, 255, 0.94);
+        color: var(--accent-deep);
+        border: 1px solid rgba(39, 73, 107, 0.12);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .button-secondary:hover,
+      .button-secondary:focus-visible {
+        transform: translateY(-1px);
+        background: #ffffff;
+      }
+
+      .hero {
+        padding: 1.35rem 0 1.45rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+        gap: 1.8rem;
+        align-items: start;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        padding: 0.6rem 0.95rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(120, 147, 180, 0.2);
+        box-shadow: var(--shadow-xs);
+        color: var(--accent-deep);
+        font-weight: 800;
+        font-size: 0.9rem;
+        line-height: 1.35;
+        text-align: center;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #8fa6c4, #577ca5);
+      }
+
+      .hero-copy {
+        padding-top: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+      }
+
+      h1,
+      h2 {
+        font-family: "Fraunces", serif;
+      }
+
+      h1 {
+        margin-top: 0.85rem;
+        font-size: clamp(2.3rem, 4vw, 3.85rem);
+        line-height: 1.04;
+        text-wrap: balance;
+      }
+
+      .hero-break {
+        display: block;
+      }
+
+      .hero-copy h1 {
+        max-width: none;
+      }
+
+      .hero-copy p {
+        margin: 0.82rem 0 0;
+        font-size: 1.04rem;
+        line-height: 1.68;
+        color: var(--muted);
+        max-width: 37rem;
+      }
+
+      .hero-benefits {
+        list-style: none;
+        margin: 0.92rem 0 0;
+        padding: 0;
+        display: grid;
+        gap: 0.68rem;
+      }
+
+      .hero-benefits li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.9rem 0.95rem;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(120, 147, 180, 0.09);
+        box-shadow: 0 12px 24px rgba(21, 48, 74, 0.05);
+        color: var(--text);
+        font-weight: 650;
+      }
+
+      .hero-benefits li::before {
+        content: "\2713";
+        flex: 0 0 auto;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(120, 147, 180, 0.14);
+        color: var(--accent-deep);
+        font-size: 0.95rem;
+        font-weight: 800;
+      }
+
+      .hero-copy-wrap {
+        display: grid;
+        gap: 0.62rem;
+      }
+
+      .hero-visual {
+        display: grid;
+        gap: 0.22rem;
+        justify-items: stretch;
+        align-content: start;
+        align-self: start;
+        width: 100%;
+      }
+
+      .hero-image-stage {
+        position: relative;
+        width: 100%;
+        max-width: 31rem;
+        aspect-ratio: 1 / 1;
+        border-radius: 32px;
+        padding: 0.02rem;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:
+          radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.92), transparent 30%),
+          radial-gradient(circle at 82% 82%, rgba(225, 233, 239, 0.42), transparent 32%),
+          linear-gradient(160deg, #f8f4ee 0%, #f4efe8 44%, #edf2f6 100%);
+        border: 1px solid rgba(132, 119, 102, 0.09);
+        box-shadow:
+          0 26px 52px rgba(21, 48, 74, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      }
+
+      .hero-image-stage::after {
+        content: "";
+        position: absolute;
+        inset: 0.8rem;
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.42);
+        pointer-events: none;
+      }
+
+      .hero-image-frame {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 26px;
+        background: transparent;
+      }
+
+      .hero-image-stage::before {
+        content: "";
+        position: absolute;
+        left: 31%;
+        right: 31%;
+        bottom: 0.4rem;
+        height: 16px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(113, 91, 63, 0.18) 0%, rgba(113, 91, 63, 0.02) 70%);
+        filter: blur(8px);
+        pointer-events: none;
+      }
+
+      .image-shell {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .image-shell img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-image-frame img {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        border-radius: 44px;
+        clip-path: inset(0 round 44px);
+        object-fit: contain;
+        object-position: center center;
+        transform: scale(1.03);
+        filter:
+          saturate(0.98)
+          contrast(1.03)
+          brightness(1.06)
+          drop-shadow(0 18px 24px rgba(79, 61, 38, 0.08));
+      }
+
+      .hero-image-badge {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        width: fit-content;
+        min-height: 48px;
+        padding: 0.65rem 1rem;
+        border-radius: 999px;
+        background: rgba(255, 252, 248, 0.92);
+        border: 1px solid rgba(132, 119, 102, 0.1);
+        box-shadow: 0 14px 30px rgba(21, 48, 74, 0.07);
+        color: var(--text);
+        font-size: 0.92rem;
+        font-weight: 800;
+        line-height: 1.3;
+        text-align: center;
+        justify-self: start;
+      }
+
+      .hero-image-badge::before {
+        content: "\2665";
+        width: 1.7rem;
+        height: 1.7rem;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(120, 147, 180, 0.14);
+        color: var(--accent-deep);
+        font-size: 0.82rem;
+      }
+
+      .hero-offer {
+        display: grid;
+        gap: 1.12rem;
+        align-content: start;
+        width: 100%;
+        max-width: 41rem;
+      }
+
+      .image-shell.is-placeholder {
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(224, 233, 243, 0.9)),
+          repeating-linear-gradient(
+            -45deg,
+            rgba(120, 147, 180, 0.12) 0,
+            rgba(120, 147, 180, 0.12) 16px,
+            rgba(255, 255, 255, 0.12) 16px,
+            rgba(255, 255, 255, 0.12) 32px
+          );
+      }
+
+      .image-note {
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 2;
+        display: none;
+        padding: 0.95rem 1rem;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(39, 73, 107, 0.1);
+        box-shadow: var(--shadow-sm);
+        color: var(--text);
+      }
+
+      .image-shell.is-placeholder .image-note {
+        display: block;
+      }
+
+      .image-note strong {
+        display: block;
+        font-size: 0.95rem;
+      }
+
+      .image-note span {
+        display: block;
+        margin-top: 0.2rem;
+        font-size: 0.84rem;
+        color: var(--muted);
+        word-break: break-word;
+      }
+
+      .purchase-card {
+        position: relative;
+        width: 100%;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 244, 238, 0.96)),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.12));
+        backdrop-filter: blur(10px);
+        border: 1.5px solid rgba(39, 73, 107, 0.16);
+        border-radius: 24px;
+        box-shadow:
+          0 30px 56px rgba(21, 48, 74, 0.14),
+          0 8px 18px rgba(21, 48, 74, 0.04),
+          inset 0 1px 0 rgba(255, 255, 255, 0.7);
+        padding: 1.4rem 1.45rem;
+      }
+
+      .purchase-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        border-radius: 24px 24px 0 0;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(120, 147, 180, 0.18));
+      }
+
+      .purchase-stars {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        color: var(--accent-deep);
+        font-weight: 800;
+        font-size: 0.95rem;
+      }
+
+      .rating-score {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+      }
+
+      .rating-context {
+        color: var(--muted);
+        font-size: 0.84rem;
+        font-weight: 750;
+      }
+
+      .stars {
+        color: #f0b650;
+        letter-spacing: 0.06em;
+        font-size: 0.94rem;
+      }
+
+      .purchase-card h2 {
+        font-size: 1.9rem;
+        margin-top: 0.78rem;
+        max-width: 24rem;
+        line-height: 1.06;
+      }
+
+      .price-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.7rem 0.85rem;
+        margin-top: 0.88rem;
+        padding: 0.95rem;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(39, 73, 107, 0.1);
+      }
+
+      .sale-price {
+        font-size: 2.45rem;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        font-family: "Fraunces", serif;
+      }
+
+      .compare-price {
+        color: var(--muted);
+        font-size: 1rem;
+        font-weight: 700;
+        text-decoration: line-through;
+      }
+
+      .save-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        min-height: 36px;
+        padding: 0.4rem 0.78rem;
+        border-radius: 999px;
+        background: rgba(46, 125, 105, 0.13);
+        color: var(--success);
+        font-weight: 800;
+        font-size: 0.88rem;
+      }
+
+      .save-badge::before {
+        content: "\2726";
+        font-size: 0.8rem;
+      }
+
+      .price-meta {
+        display: none;
+      }
+
+      .price-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        min-height: 36px;
+        padding: 0.32rem 0.72rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(132, 119, 102, 0.09);
+        color: var(--text);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .price-meta span:nth-child(1)::before {
+        content: "\25B8";
+        color: var(--accent-deep);
+        font-size: 0.75rem;
+      }
+
+      .price-meta span:nth-child(2)::before {
+        content: "\21BA";
+        color: var(--accent-deep);
+        font-size: 0.75rem;
+      }
+
+      .purchase-copy {
+        margin: 0.9rem 0 0;
+        color: var(--muted);
+        font-size: 0.98rem;
+        line-height: 1.65;
+      }
+
+      .color-picker {
+        margin: 1rem 0 0;
+        padding: 0;
+        border: 0;
+        min-width: 0;
+      }
+
+      .color-heading {
+        padding: 0;
+        color: var(--text);
+        font-size: 0.9rem;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+      }
+
+      .color-list {
+        margin-top: 0.72rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.7rem;
+      }
+
+      .color-option {
+        position: relative;
+      }
+
+      .color-option input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .color-chip {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        min-height: 108px;
+        padding: 0.85rem 0.55rem 0.78rem;
+        border-radius: 18px;
+        border: 1px solid rgba(132, 119, 102, 0.12);
+        background: rgba(255, 255, 255, 0.84);
+        box-shadow: 0 14px 24px rgba(21, 48, 74, 0.05);
+        text-align: center;
+        cursor: pointer;
+        transition:
+          border-color 160ms ease,
+          transform 160ms ease,
+          box-shadow 160ms ease,
+          background 160ms ease,
+          opacity 160ms ease;
+      }
+
+      .color-option:not(.color-option--disabled) .color-chip:hover {
+        transform: translateY(-1px);
+        border-color: rgba(39, 73, 107, 0.22);
+      }
+
+      .color-swatch {
+        position: relative;
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        border: 1.5px solid rgba(39, 73, 107, 0.16);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.8),
+          0 8px 14px rgba(21, 48, 74, 0.08);
+      }
+
+      .color-swatch--blue {
+        background: linear-gradient(180deg, #4c6f9e 0%, #2a4f7c 100%);
+      }
+
+      .color-swatch--grey {
+        background: linear-gradient(180deg, #d8dbe1 0%, #b8c0cb 100%);
+      }
+
+      .color-swatch--white {
+        background: linear-gradient(180deg, #ffffff 0%, #eef2f6 100%);
+      }
+
+      .color-name {
+        font-size: 0.92rem;
+        font-weight: 800;
+        color: var(--text);
+        line-height: 1.2;
+      }
+
+      .color-state {
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .color-option input:checked + .color-chip {
+        border-color: rgba(39, 73, 107, 0.28);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(236, 242, 248, 0.93));
+        box-shadow: 0 20px 30px rgba(21, 48, 74, 0.1);
+      }
+
+      .color-option input:checked + .color-chip .color-swatch {
+        border-color: rgba(39, 73, 107, 0.34);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.88),
+          0 0 0 3px rgba(120, 147, 180, 0.16),
+          0 8px 14px rgba(21, 48, 74, 0.08);
+      }
+
+      .color-option--disabled .color-chip {
+        opacity: 0.5;
+        background: rgba(244, 245, 247, 0.86);
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+
+      .color-option--disabled .color-name {
+        text-decoration: line-through;
+        text-decoration-thickness: 1.5px;
+      }
+
+      .color-option--disabled .color-swatch::after {
+        content: "";
+        position: absolute;
+        top: -6px;
+        bottom: -6px;
+        left: 50%;
+        width: 2px;
+        border-radius: 999px;
+        background: rgba(39, 73, 107, 0.75);
+        transform: translateX(-50%) rotate(45deg);
+      }
+
+      .color-note {
+        margin-top: 0.62rem;
+        font-size: 0.81rem;
+        color: var(--muted);
+      }
+
+      .bundle-heading {
+        margin-top: 1.05rem;
+        color: var(--text);
+        font-size: 0.9rem;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+      }
+
+      .bundle-list {
+        margin-top: 0.72rem;
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .bundle-option {
+        position: relative;
+      }
+
+      .bundle-option--value .bundle-card {
+        border-color: rgba(39, 73, 107, 0.18);
+        background: linear-gradient(180deg, rgba(245, 249, 253, 0.95), rgba(238, 244, 250, 0.92));
+      }
+
+      .bundle-option input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .bundle-card {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 0.95rem;
+        align-items: center;
+        padding: 1.02rem 1.05rem;
+        border-radius: 18px;
+        border: 1px solid rgba(132, 119, 102, 0.12);
+        background: rgba(255, 255, 255, 0.84);
+        box-shadow: 0 14px 24px rgba(21, 48, 74, 0.05);
+        cursor: pointer;
+        transition:
+          border-color 160ms ease,
+          transform 160ms ease,
+          box-shadow 160ms ease,
+          background 160ms ease;
+      }
+
+      .bundle-card:hover {
+        transform: translateY(-1px);
+        border-color: rgba(39, 73, 107, 0.22);
+      }
+
+      .bundle-indicator {
+        width: 22px;
+        height: 22px;
+        border-radius: 999px;
+        border: 2px solid rgba(39, 73, 107, 0.24);
+        position: relative;
+      }
+
+      .bundle-indicator::after {
+        content: "";
+        position: absolute;
+        inset: 4px;
+        border-radius: 999px;
+        background: transparent;
+        transition: background 160ms ease;
+      }
+
+      .bundle-text strong,
+      .bundle-price {
+        display: block;
+      }
+
+      .bundle-text strong {
+        font-size: 1rem;
+        font-weight: 800;
+      }
+
+      .bundle-text span {
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .bundle-price {
+        font-weight: 800;
+        font-size: 1.12rem;
+        letter-spacing: -0.02em;
+      }
+
+      .bundle-tag {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 0.35rem;
+        padding: 0.26rem 0.58rem;
+        border-radius: 999px;
+        background: rgba(120, 147, 180, 0.14);
+        color: var(--accent-deep);
+        font-size: 0.78rem;
+        font-weight: 800;
+      }
+
+      .bundle-option input:checked + .bundle-card {
+        border-color: rgba(39, 73, 107, 0.28);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(236, 242, 248, 0.92));
+        box-shadow: 0 20px 30px rgba(21, 48, 74, 0.1);
+      }
+
+      .bundle-option input:checked + .bundle-card .bundle-indicator {
+        border-color: var(--accent-deep);
+      }
+
+      .bundle-option input:checked + .bundle-card .bundle-indicator::after {
+        background: var(--accent-deep);
+      }
+
+      .addon-panel {
+        margin-top: 1rem;
+        display: grid;
+        gap: 0.72rem;
+      }
+
+      .addon-heading {
+        color: var(--text);
+        font-size: 0.9rem;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+      }
+
+      .addon-option {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+        align-items: start;
+        padding: 0.92rem 0.95rem;
+        border-radius: 18px;
+        border: 1px solid rgba(39, 73, 107, 0.12);
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: 0 12px 22px rgba(21, 48, 74, 0.05);
+        cursor: pointer;
+      }
+
+      .addon-option input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .addon-copy {
+        min-width: 0;
+      }
+
+      .addon-copy strong {
+        display: block;
+        color: var(--text);
+        font-size: 0.96rem;
+        line-height: 1.25;
+      }
+
+      .addon-copy span {
+        display: block;
+        margin-top: 0.22rem;
+        color: var(--muted);
+        font-size: 0.84rem;
+        font-weight: 650;
+        line-height: 1.45;
+      }
+
+      .addon-copy a {
+        color: var(--accent-deep);
+        font-weight: 800;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .addon-price {
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+      }
+
+      .addon-option:has(input:checked) {
+        border-color: rgba(39, 73, 107, 0.18);
+        background: linear-gradient(180deg, rgba(249, 251, 253, 0.95), rgba(239, 245, 250, 0.82));
+        box-shadow: 0 12px 22px rgba(21, 48, 74, 0.06);
+      }
+
+      .order-total {
+        margin-top: 0.9rem;
+        padding: 0.85rem 0.95rem;
+        border-radius: 18px;
+        background: rgba(236, 242, 248, 0.78);
+        border: 1px solid rgba(39, 73, 107, 0.12);
+      }
+
+      .order-total-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: baseline;
+      }
+
+      .order-total-row span:first-child {
+        color: var(--muted);
+        font-size: 0.86rem;
+        font-weight: 800;
+      }
+
+      .order-total-row strong {
+        color: var(--text);
+        font-family: "Fraunces", serif;
+        font-size: 1.5rem;
+        letter-spacing: -0.03em;
+      }
+
+      .order-total-note {
+        margin: 0.28rem 0 0;
+        color: var(--muted);
+        font-size: 0.78rem;
+        line-height: 1.45;
+      }
+
+      .purchase-cta {
+        width: 100%;
+        margin-top: 1rem;
+        min-height: 64px;
+        font-size: 1.05rem;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #173d63 0%, #315f8f 100%);
+        box-shadow:
+          0 22px 34px rgba(25, 63, 101, 0.34),
+          inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      }
+
+      .trust-row {
+        margin-top: 0.95rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.52rem;
+      }
+
+      .trust-row span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        min-height: 42px;
+        padding: 0.42rem 0.55rem;
+        border-radius: 14px;
+        background: rgba(236, 242, 248, 0.72);
+        border: 1px solid rgba(39, 73, 107, 0.1);
+        color: var(--accent-deep);
+        font-size: 0.78rem;
+        font-weight: 750;
+        text-align: center;
+      }
+
+      .trust-row span:nth-child(1)::before {
+        content: "\25B8";
+        color: var(--accent-deep);
+        font-size: 0.72rem;
+      }
+
+      .trust-row span:nth-child(2)::before {
+        content: "\21BA";
+        color: var(--accent-deep);
+        font-size: 0.72rem;
+      }
+
+      .trust-row span:nth-child(3)::before {
+        content: "\2713";
+        color: var(--accent-deep);
+        font-size: 0.72rem;
+      }
+
+      section {
+        padding: 4.15rem 0;
+        scroll-margin-top: calc(var(--header-height) + 1.5rem);
+      }
+
+      #why-it-works {
+        padding-top: 2.45rem;
+      }
+
+      .section-head {
+        max-width: 42rem;
+        margin-bottom: 1.95rem;
+      }
+
+      .section-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        color: var(--accent-deep);
+        font-size: 0.9rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .section-kicker::before {
+        content: "";
+        width: 28px;
+        height: 1px;
+        background: rgba(39, 73, 107, 0.3);
+      }
+
+      .section-head h2 {
+        margin-top: 0.7rem;
+        font-size: clamp(2.1rem, 4vw, 3.3rem);
+      }
+
+      .section-head p {
+        margin: 0.95rem 0 0;
+        font-size: 1.05rem;
+        color: var(--muted);
+      }
+
+      .comparison-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.65rem;
+      }
+
+      .comparison-card {
+        display: flex;
+        flex-direction: column;
+        padding: 1.28rem;
+        border-radius: 32px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 248, 252, 0.88));
+        border: 1px solid rgba(120, 147, 180, 0.14);
+        box-shadow: 0 22px 38px rgba(21, 48, 74, 0.09);
+      }
+
+      .comparison-image {
+        position: relative;
+        aspect-ratio: 5 / 4;
+        border-radius: 26px;
+        padding: 1rem;
+        background:
+          linear-gradient(180deg, rgba(251, 249, 246, 0.98), rgba(242, 238, 232, 0.96)),
+          linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(235, 239, 243, 0.78));
+        border: 1px solid rgba(120, 147, 180, 0.1);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.8),
+          0 16px 28px rgba(21, 48, 74, 0.05);
+        isolation: isolate;
+      }
+
+      .comparison-image::after {
+        content: "";
+        position: absolute;
+        inset: 1rem;
+        border-radius: 18px;
+        background: linear-gradient(180deg, rgba(255, 250, 244, 0.08), rgba(241, 233, 220, 0.12));
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .comparison-image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 18px;
+        object-fit: cover;
+        object-position: center 52%;
+        transform: scale(0.9);
+        transform-origin: center;
+        filter: brightness(1.02) contrast(0.94) saturate(0.9);
+        box-shadow: 0 10px 18px rgba(21, 48, 74, 0.06);
+      }
+
+      .comparison-image--regular img {
+        filter: brightness(1.08) contrast(0.9) saturate(0.82);
+        object-position: center 48%;
+      }
+
+      .comparison-image--revive img {
+        filter: brightness(1) contrast(0.93) saturate(0.88);
+        object-position: center 50%;
+      }
+
+      .comparison-label {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+        margin-top: 1.15rem;
+        padding: 0.26rem 0.72rem;
+        border-radius: 999px;
+        background: rgba(220, 231, 243, 0.62);
+        color: var(--accent-deep);
+        font-size: 0.8rem;
+        font-weight: 800;
+      }
+
+      .sticky-desktop-cta {
+        position: fixed;
+        left: 50%;
+        bottom: 1.2rem;
+        z-index: 35;
+        width: min(calc(100% - 2.5rem), 760px);
+        transform: translate(-50%, 120%);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          transform 220ms ease,
+          opacity 220ms ease;
+      }
+
+      .sticky-desktop-cta.is-visible {
+        transform: translate(-50%, 0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .sticky-desktop-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.78rem 0.82rem 0.78rem 1.15rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(39, 73, 107, 0.14);
+        box-shadow: 0 24px 48px rgba(21, 48, 74, 0.18);
+        backdrop-filter: blur(16px);
+      }
+
+      .sticky-desktop-copy {
+        display: grid;
+        gap: 0.08rem;
+      }
+
+      .sticky-desktop-copy strong {
+        font-size: 0.98rem;
+        line-height: 1.2;
+      }
+
+      .sticky-desktop-copy span {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .sticky-desktop-cta .button {
+        min-height: 48px;
+        padding-inline: 1.15rem;
+        white-space: nowrap;
+      }
+
+      .sticky-mobile-cta {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 45;
+        display: none;
+        padding: 0.7rem 0.8rem calc(0.7rem + env(safe-area-inset-bottom));
+        background: rgba(252, 251, 248, 0.96);
+        border-top: 1px solid rgba(39, 73, 107, 0.12);
+        box-shadow: 0 -16px 30px rgba(21, 48, 74, 0.12);
+        backdrop-filter: blur(16px);
+      }
+
+      .sticky-mobile-inner {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.72rem;
+        align-items: center;
+        max-width: 34rem;
+        margin: 0 auto;
+      }
+
+      .sticky-mobile-price {
+        display: grid;
+        gap: 0.06rem;
+      }
+
+      .sticky-mobile-price strong {
+        font-size: 1.02rem;
+        line-height: 1.1;
+      }
+
+      .sticky-mobile-price span {
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 800;
+      }
+
+      .sticky-mobile-cta .button {
+        min-height: 50px;
+        padding-inline: 1.05rem;
+        border-radius: 16px;
+        white-space: nowrap;
+      }
+
+      .comparison-card h3 {
+        margin-top: 0.95rem;
+        font-size: 1.72rem;
+      }
+
+      .comparison-card ul {
+        margin: 0.95rem 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 0.85rem;
+      }
+
+      .comparison-card li {
+        display: flex;
+        gap: 0.72rem;
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .comparison-card li::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        margin-top: 0.45rem;
+        border-radius: 999px;
+        background: rgba(39, 73, 107, 0.24);
+        flex: 0 0 auto;
+      }
+
+      .comparison-card--highlight {
+        background:
+          radial-gradient(circle at top right, rgba(120, 147, 180, 0.14), transparent 34%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(234, 242, 249, 0.96));
+        border-color: rgba(39, 73, 107, 0.2);
+      }
+
+      .comparison-card--highlight li::before {
+        background: var(--accent-deep);
+      }
+
+      .benefits {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0));
+      }
+
+      .benefit-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.1rem;
+      }
+
+      .benefit-card {
+        padding: 1.55rem;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(120, 147, 180, 0.12);
+        box-shadow: var(--shadow-xs);
+      }
+
+      .benefit-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 18px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 1.1rem;
+        background: linear-gradient(180deg, #edf3f9, #dde8f2);
+        color: var(--accent-deep);
+        font-weight: 800;
+        font-size: 1.1rem;
+      }
+
+      .benefit-card h3 {
+        font-size: 1.3rem;
+      }
+
+      .benefit-card p {
+        margin: 0.75rem 0 0;
+        color: var(--muted);
+      }
+
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.1rem;
+      }
+
+      .reviews-more {
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+        margin-top: 0;
+        transition:
+          grid-template-rows 300ms ease,
+          opacity 220ms ease,
+          margin-top 300ms ease;
+      }
+
+      .reviews-more[data-expanded="true"] {
+        grid-template-rows: 1fr;
+        opacity: 1;
+        margin-top: 1.1rem;
+      }
+
+      .reviews-more-inner {
+        overflow: hidden;
+      }
+
+      .review-card {
+        position: relative;
+        padding: 1.45rem;
+        border-radius: 26px;
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(120, 147, 180, 0.12);
+        box-shadow: var(--shadow-xs);
+      }
+
+      .review-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 4px;
+        border-radius: 26px 26px 0 0;
+        background: linear-gradient(90deg, rgba(120, 147, 180, 0.38), rgba(39, 73, 107, 0.18));
+      }
+
+      .review-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.9rem;
+        margin-bottom: 1rem;
+      }
+
+      .review-stars {
+        color: #f0b650;
+        letter-spacing: 0.08em;
+        font-size: 0.92rem;
+      }
+
+      .review-tag {
+        color: var(--muted);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .review-card p {
+        margin: 0;
+        font-size: 1.01rem;
+        line-height: 1.7;
+        font-weight: 600;
+      }
+
+      .review-person {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-top: 1.25rem;
+      }
+
+      .review-initial {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(180deg, #edf3f9, #dde7f1);
+        color: var(--accent-deep);
+        font-weight: 800;
+      }
+
+      .review-person footer {
+        margin: 0;
+        color: var(--text);
+        font-weight: 800;
+      }
+
+      .review-person span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .reviews-actions {
+        margin-top: 1.35rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .reviews-toggle {
+        min-width: 220px;
+      }
+
+      .guarantee-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        gap: 1.4rem;
+        align-items: start;
+      }
+
+      .guarantee-panel,
+      .faq-panel {
+        border-radius: 32px;
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(120, 147, 180, 0.12);
+        box-shadow: var(--shadow-md);
+      }
+
+      .guarantee-panel {
+        padding: 1.75rem;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:
+          radial-gradient(circle at top right, rgba(120, 147, 180, 0.2), transparent 42%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(235, 241, 247, 0.98));
+      }
+
+      .seal {
+        width: min(100%, 320px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 10px solid rgba(39, 73, 107, 0.12);
+        background:
+          radial-gradient(circle at center, #ffffff 0 54%, #edf2f7 54% 72%, #dce5ef 72% 100%);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.65), var(--shadow-lg);
+      }
+
+      .seal-inner {
+        width: 68%;
+      }
+
+      .seal-top {
+        display: block;
+        font-size: 0.92rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent-deep);
+      }
+
+      .seal-number {
+        display: block;
+        margin-top: 0.4rem;
+        font-family: "Fraunces", serif;
+        font-size: 4.2rem;
+        line-height: 0.95;
+      }
+
+      .seal-bottom {
+        display: block;
+        margin-top: 0.55rem;
+        font-size: 1rem;
+        font-weight: 800;
+        color: var(--muted);
+      }
+
+      .faq-panel {
+        padding: 1.05rem;
+      }
+
+      .faq-item {
+        border-radius: 20px;
+        border: 1px solid rgba(39, 73, 107, 0.1);
+        background: #ffffff;
+        overflow: hidden;
+      }
+
+      .faq-item + .faq-item {
+        margin-top: 0.8rem;
+      }
+
+      .faq-item summary {
+        list-style: none;
+      }
+
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .faq-question {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1.15rem 1.15rem;
+        border: 0;
+        background: transparent;
+        color: var(--text);
+        font-size: 1rem;
+        font-weight: 800;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .faq-question span:last-child {
+        flex: 0 0 auto;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(120, 147, 180, 0.12);
+        color: var(--accent-deep);
+        transition: transform 180ms ease;
+      }
+
+      .faq-item[open] .faq-question span:last-child {
+        transform: rotate(45deg);
+      }
+
+      .faq-answer {
+        padding: 0 1.15rem 1.1rem;
+        color: var(--muted);
+      }
+
+      .faq-answer p {
+        margin: 0;
+      }
+
+      .final-cta {
+        padding: 1.4rem 0 3.6rem;
+      }
+
+      .cta-band {
+        padding: 2.2rem;
+        border-radius: 36px;
+        background:
+          radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), transparent 34%),
+          radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.12), transparent 32%),
+          linear-gradient(135deg, #203f62 0%, #31567d 48%, #4f7298 100%);
+        color: #f8fbff;
+        box-shadow: 0 30px 56px rgba(21, 48, 74, 0.22);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .cta-band-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.8rem;
+      }
+
+      .cta-band h2 {
+        font-size: clamp(2.2rem, 4vw, 3.15rem);
+      }
+
+      .cta-band p {
+        margin: 0.8rem 0 0;
+        max-width: 40rem;
+        color: rgba(248, 251, 255, 0.8);
+        font-size: 1.04rem;
+      }
+
+      .cta-offer-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        margin-top: 1.15rem;
+      }
+
+      .cta-offer-row span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 36px;
+        padding: 0.35rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        color: #f8fbff;
+        font-size: 0.85rem;
+        font-weight: 800;
+      }
+
+      .cta-band .button-secondary {
+        min-width: 170px;
+        background: #ffffff;
+        box-shadow: 0 18px 36px rgba(17, 33, 51, 0.18);
+      }
+
+      .footer {
+        padding: 0 0 2.8rem;
+      }
+
+      .footer-inner {
+        padding-top: 2rem;
+        border-top: 1px solid rgba(21, 48, 74, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        color: var(--muted);
+      }
+
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 1.15rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a:hover,
+      .footer-links a:focus-visible,
+      .footer-brand a:hover,
+      .footer-brand a:focus-visible {
+        color: var(--accent-deep);
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      @media (max-width: 1080px) {
+        .hero-grid {
+          grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+          gap: 1.35rem;
+        }
+
+        .guarantee-wrap,
+        .benefit-grid,
+        .reviews-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .benefit-grid {
+          gap: 1rem;
+        }
+
+        .hero-image-stage {
+          width: 100%;
+          max-width: 28.5rem;
+        }
+
+        .sticky-desktop-cta {
+          display: none;
+        }
+      }
+
+      @media (max-width: 900px) {
+        :root {
+          --header-height: 72px;
+        }
+
+        .header-toggle {
+          display: inline-flex;
+        }
+
+        .site-nav {
+          position: absolute;
+          top: calc(100% + 0.65rem);
+          left: 1rem;
+          right: 1rem;
+          padding: 1rem;
+          border-radius: 22px;
+          background: rgba(255, 255, 255, 0.98);
+          border: 1px solid rgba(120, 147, 180, 0.14);
+          box-shadow: var(--shadow-md);
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .site-nav.is-open {
+          display: flex;
+        }
+
+        .header-actions .button-secondary {
+          min-height: 46px;
+          padding: 0 1rem;
+        }
+
+        .hero-grid,
+        .comparison-grid,
+        .reviews-grid,
+        .guarantee-wrap,
+        .benefit-grid,
+        .cta-band-inner {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+
+        .hero-copy {
+          max-width: 100%;
+          padding-top: 0;
+        }
+
+        .hero {
+          padding-top: 0.6rem;
+          padding-bottom: 1.55rem;
+        }
+
+        .hero-grid {
+          gap: 0.72rem;
+        }
+
+        .hero-visual {
+          justify-items: center;
+          gap: 0.2rem;
+        }
+
+        .hero-offer {
+          gap: 0.72rem;
+          margin-inline: auto;
+        }
+
+        .hero-image-stage {
+          width: 100%;
+          max-width: 24.75rem;
+          aspect-ratio: 1 / 1;
+          margin: 0 auto;
+          padding: 0.03rem;
+        }
+
+        .hero-image-stage::before {
+          left: 32%;
+          right: 32%;
+          bottom: 0.35rem;
+          height: 14px;
+        }
+
+        .hero-image-frame {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .hero-image-frame img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+          object-position: center center;
+          transform: scale(1.07);
+        }
+
+        .hero-image-badge {
+          justify-self: center;
+        }
+
+        .cta-band-inner {
+          gap: 1.25rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .header-inner,
+        .container {
+          width: min(calc(100% - 1.2rem), var(--container));
+        }
+
+        .announcement-bar {
+          font-size: 0.84rem;
+          padding: 0.72rem 0.8rem;
+        }
+
+        .logo {
+          font-size: 1.45rem;
+        }
+
+        h1 {
+          margin-top: 0.8rem;
+          font-size: clamp(2.02rem, 8.2vw, 2.72rem);
+        }
+
+        .hero-break {
+          display: none;
+        }
+
+        .hero-copy p,
+        .section-head p,
+        .cta-band p {
+          font-size: 0.98rem;
+        }
+
+        .hero-copy-wrap {
+          gap: 0.66rem;
+        }
+
+        .hero-benefits {
+          margin-top: 1.05rem;
+          gap: 0.7rem;
+        }
+
+        .hero-benefits li {
+          padding: 0.82rem 0.88rem;
+        }
+
+        section {
+          padding: 3.3rem 0;
+        }
+
+        #why-it-works {
+          padding-top: 2rem;
+        }
+
+        .hero-benefits li,
+        .purchase-card,
+        .comparison-card,
+        .benefit-card,
+        .review-card,
+        .cta-band,
+        .faq-panel,
+        .guarantee-panel {
+          border-radius: 22px;
+        }
+
+        .hero-image-stage {
+          width: 100%;
+          max-width: 24rem;
+          aspect-ratio: 1 / 1;
+          border-radius: 24px;
+          padding: 0.02rem;
+        }
+
+        .hero-image-stage::before {
+          left: 34%;
+          right: 34%;
+          bottom: 0.2rem;
+          height: 10px;
+          filter: blur(6px);
+        }
+
+        .hero-image-frame {
+          border-radius: 24px;
+        }
+
+        .hero-image-frame img {
+          max-width: 100%;
+          max-height: 100%;
+          border-radius: 34px;
+          clip-path: inset(0 round 34px);
+          object-position: center center;
+          transform: scale(1.06);
+        }
+
+        .hero-image-badge {
+          max-width: min(100%, 18rem);
+          min-height: 40px;
+          padding: 0.56rem 0.85rem;
+          font-size: 0.84rem;
+        }
+
+        .hero-offer {
+          gap: 0.68rem;
+        }
+
+        .color-list {
+          gap: 0.55rem;
+        }
+
+        .color-chip {
+          min-height: 96px;
+          padding: 0.72rem 0.45rem 0.68rem;
+          border-radius: 16px;
+        }
+
+        .color-swatch {
+          width: 40px;
+          height: 40px;
+          border-radius: 12px;
+        }
+
+        .color-name {
+          font-size: 0.86rem;
+        }
+
+        .color-state {
+          font-size: 0.66rem;
+        }
+
+        .purchase-card {
+          padding: 1.2rem;
+        }
+
+        .purchase-card h2 {
+          font-size: 1.7rem;
+          max-width: none;
+        }
+
+        .comparison-image {
+          padding: 0.75rem;
+          border-radius: 22px;
+        }
+
+        .comparison-image::after {
+          inset: 0.75rem;
+          border-radius: 16px;
+        }
+
+        .comparison-image img {
+          border-radius: 16px;
+          transform: scale(0.92);
+        }
+
+        .bundle-card {
+          grid-template-columns: auto 1fr;
+        }
+
+        .bundle-price {
+          grid-column: 2;
+        }
+
+        .footer-inner {
+          align-items: flex-start;
+        }
+
+        .price-meta,
+        .cta-offer-row {
+          gap: 0.5rem;
+        }
+
+        .trust-row {
+          gap: 0.45rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          overflow: hidden;
+        }
+
+        .hero-grid {
+          gap: 0.65rem;
+        }
+
+        .hero-visual,
+        .hero-offer,
+        .hero-copy,
+        .hero-copy-wrap {
+          width: 100%;
+        }
+
+        .hero-copy {
+          text-align: center;
+          padding-top: 0;
+        }
+
+        .hero-copy-wrap {
+          justify-items: center;
+          gap: 0.66rem;
+        }
+
+        .eyebrow,
+        .hero-image-badge {
+          margin-inline: auto;
+        }
+
+        .eyebrow {
+          max-width: min(100%, 19rem);
+        }
+
+        .hero-benefits {
+          width: 100%;
+          max-width: 32rem;
+        }
+
+        .hero-image-stage {
+          width: min(100%, 24rem);
+          max-width: 24rem;
+        }
+
+        .hero-image-badge {
+          margin-top: 0.12rem;
+          margin-bottom: 0.2rem;
+        }
+
+        .purchase-card {
+          width: 100%;
+          margin-inline: auto;
+        }
+      }
+
+      @media (max-width: 767px) {
+        body {
+          padding-bottom: 84px;
+        }
+
+        .sticky-mobile-cta {
+          display: block;
+        }
+
+        .hero {
+          padding-bottom: 1rem;
+        }
+
+        .hero-grid {
+          gap: 0.52rem;
+        }
+
+        .hero-copy p {
+          margin-top: 0.65rem;
+          line-height: 1.55;
+        }
+
+        .hero-benefits {
+          margin-top: 0.82rem;
+          gap: 0.54rem;
+        }
+
+        .hero-benefits li {
+          padding: 0.72rem 0.8rem;
+          font-size: 0.92rem;
+        }
+
+        .purchase-card {
+          padding: 0.98rem;
+        }
+
+        .purchase-stars {
+          font-size: 0.84rem;
+        }
+
+        .purchase-card h2 {
+          margin-top: 0.58rem;
+        }
+
+        .price-row {
+          margin-top: 0.68rem;
+          padding: 0.72rem;
+          gap: 0.45rem 0.62rem;
+        }
+
+        .sale-price {
+          font-size: 2rem;
+        }
+
+        .purchase-copy {
+          margin-top: 0.62rem;
+          line-height: 1.5;
+          font-size: 0.92rem;
+        }
+
+        .color-picker,
+        .bundle-heading {
+          margin-top: 0.78rem;
+        }
+
+        .bundle-list,
+        .color-list {
+          margin-top: 0.54rem;
+        }
+
+        .bundle-card {
+          padding: 0.78rem 0.85rem;
+          border-radius: 16px;
+        }
+
+        .addon-panel {
+          margin-top: 0.78rem;
+          gap: 0.58rem;
+        }
+
+        .addon-option {
+          grid-template-columns: 1fr;
+          padding: 0.78rem 0.82rem;
+          border-radius: 16px;
+        }
+
+        .addon-price {
+          margin-top: -0.08rem;
+        }
+
+        .order-total {
+          margin-top: 0.68rem;
+          padding: 0.72rem 0.82rem;
+          border-radius: 16px;
+        }
+
+        .order-total-row strong {
+          font-size: 1.35rem;
+        }
+
+        .purchase-cta {
+          margin-top: 0.82rem;
+          min-height: 56px;
+        }
+
+        .trust-row {
+          grid-template-columns: 1fr;
+          margin-top: 0.7rem;
+          gap: 0.38rem;
+        }
+
+        .trust-row span {
+          min-height: 34px;
+          font-size: 0.76rem;
+        }
+
+        section {
+          padding: 2.75rem 0;
+        }
+
+        #why-it-works {
+          padding-top: 1.65rem;
+        }
+
+        .section-head {
+          margin-bottom: 1.4rem;
+        }
+
+        .comparison-card,
+        .benefit-card,
+        .review-card {
+          padding: 1.1rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="announcement-bar">Free Shipping Today + 60-Night Risk-Free Trial</div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="#top" aria-label="ReviveAlign home">Revive<span>Align</span></a>
+        <div class="header-actions">
+          <nav class="site-nav" id="site-nav" aria-label="Primary">
+            <a href="#why-it-works">Why It Works</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#faq">FAQ</a>
+          </nav>
+          <a class="button button-secondary" href="#buy-box">Order Now</a>
+          <button
+            class="header-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Toggle navigation"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-visual">
+            <div class="hero-image-stage">
+              <figure class="hero-image-frame image-shell">
+                <!-- Replace this hero image with your main lifestyle/product photo -->
+                <img
+                src="images/hero-side-sleeper.jpg"
+                alt="ReviveAlign side sleeper pillow in use while side sleeping"
+                data-placeholder="images/hero-side-sleeper.jpg"
+                loading="eager"
+                fetchpriority="high"
+                />
+                <figcaption class="image-note">
+                  <strong>Replace hero image</strong>
+                  <span>images/hero-side-sleeper.jpg</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="hero-image-badge">Loved by Side Sleepers</div>
+          </div>
+
+          <div class="hero-offer">
+            <div class="hero-copy">
+              <div class="hero-copy-wrap">
+                <div class="eyebrow">For side sleepers with hip, knee, or back discomfort</div>
+                <div>
+                  <h1>Sleep On Your Side Without <br class="hero-break" />Hip &amp; Knee Pressure.</h1>
+                  <p>
+                    A contoured side-sleeper pillow designed to stay between your legs and
+                    support a more comfortable sleeping position overnight.
+                  </p>
+                </div>
+                <ul class="hero-benefits" aria-label="Key product benefits">
+                  <li>Helps keep your hips and knees in a more supported position</li>
+                  <li>Stays in place better than a regular pillow</li>
+                  <li>Soft memory foam comfort through the night</li>
+                </ul>
+              </div>
+            </div>
+
+            <aside class="purchase-card" id="buy-box">
+              <div class="purchase-stars">
+                <span class="rating-score">
+                  <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span>4.8/5</span>
+                </span>
+                <span class="rating-context">Based on 1,200+ side sleeper reviews</span>
+              </div>
+              <h2>ReviveAlign Side Sleeper Alignment Pillow</h2>
+              <div class="price-row">
+                <span class="sale-price" id="sale-price">$34.95</span>
+                <span class="compare-price">$69.90</span>
+                <span class="save-badge">Save 50% today</span>
+              </div>
+              <p class="purchase-copy">
+                Made to fit comfortably between your legs for a more supported side-sleeping
+                position through the night.
+              </p>
+
+              <fieldset class="color-picker">
+                <legend class="color-heading">Color</legend>
+                <div class="color-list" aria-label="Choose a color">
+                  <label class="color-option">
+                    <input type="radio" name="color" value="Blue" checked />
+                    <span class="color-chip">
+                      <span class="color-swatch color-swatch--blue"></span>
+                      <span class="color-name">Blue</span>
+                      <span class="color-state">Available</span>
+                    </span>
+                  </label>
+
+                  <label class="color-option color-option--disabled">
+                    <input type="radio" name="color" value="Grey" disabled />
+                    <span class="color-chip" aria-hidden="true">
+                      <span class="color-swatch color-swatch--grey"></span>
+                      <span class="color-name">Grey</span>
+                      <span class="color-state">Sold out</span>
+                    </span>
+                  </label>
+
+                  <label class="color-option color-option--disabled">
+                    <input type="radio" name="color" value="White" disabled />
+                    <span class="color-chip" aria-hidden="true">
+                      <span class="color-swatch color-swatch--white"></span>
+                      <span class="color-name">White</span>
+                      <span class="color-state">Sold out</span>
+                    </span>
+                  </label>
+                </div>
+                <div class="color-note">Grey and White are currently sold out.</div>
+              </fieldset>
+
+              <div class="bundle-heading">Choose your bundle</div>
+              <form class="bundle-list" id="bundle-form">
+                <label class="bundle-option">
+                  <input
+                    type="radio"
+                    name="bundle"
+                    value="1 Pillow"
+                    data-price="$34.95"
+                    data-cta="Try ReviveAlign Risk-Free"
+                    data-checkout="#buy-box"
+                    checked
+                  />
+                  <span class="bundle-card">
+                    <span class="bundle-indicator" aria-hidden="true"></span>
+                    <span class="bundle-text">
+                      <strong>1 Pillow</strong>
+                      <span>Good for trying it out</span>
+                    </span>
+                    <span class="bundle-price">$34.95</span>
+                  </span>
+                </label>
+
+                <label class="bundle-option bundle-option--value">
+                  <input
+                    type="radio"
+                    name="bundle"
+                    value="2 Pillows"
+                    data-price="$59.90"
+                    data-cta="Try ReviveAlign Risk-Free"
+                    data-checkout="#buy-box"
+                  />
+                  <span class="bundle-card">
+                    <span class="bundle-indicator" aria-hidden="true"></span>
+                    <span class="bundle-text">
+                      <strong>2 Pillows</strong>
+                      <span>Best value &middot; Save more</span>
+                      <span class="bundle-tag">Best value</span>
+                    </span>
+                    <span class="bundle-price">$59.90</span>
+                  </span>
+                </label>
+              </form>
+
+              <div class="addon-panel" aria-label="Optional checkout add-ons">
+                <div class="addon-heading">Optional add-ons</div>
+                <label class="addon-option">
+                  <input
+                    type="checkbox"
+                    name="shipping-protection"
+                    id="shipping-protection"
+                    data-price="4.99"
+                    checked
+                  />
+                  <span class="addon-copy">
+                    <strong>Shipping Protection</strong>
+                    <span>Covers eligible lost, stolen, or damaged packages in transit.</span>
+                  </span>
+                  <span class="addon-price">+$4.99</span>
+                </label>
+              </div>
+
+              <div class="order-total" aria-live="polite">
+                <div class="order-total-row">
+                  <span>Estimated today</span>
+                  <strong id="estimated-total">$39.94</strong>
+                </div>
+                <p class="order-total-note" id="estimated-total-note">
+                  Includes optional Shipping Protection. You can remove it before ordering.
+                </p>
+              </div>
+
+              <a class="button button-primary purchase-cta" id="purchase-cta" href="#buy-box">
+                Try ReviveAlign Risk-Free
+              </a>
+              <div class="trust-row">
+                <span>Free Shipping Today</span>
+                <span>60-Night Trial</span>
+                <span>Secure Checkout</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="why-it-works">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">Why It Works</div>
+            <h2>Why It Works Better Than a Regular Pillow</h2>
+            <p>
+              A regular pillow can help for a little while, but it often slips away during the
+              night. ReviveAlign is made for between-leg support, so it feels more stable and
+              more useful for side sleepers.
+            </p>
+          </div>
+
+          <div class="comparison-grid">
+            <article class="comparison-card">
+              <div class="comparison-image comparison-image--regular image-shell">
+                <!-- Replace this comparison image with your regular pillow example -->
+                <img
+                  src="images/comparison-regular-pillow.jpg"
+                  alt="Regular pillow used for side sleeping support"
+                  data-placeholder="images/comparison-regular-pillow.jpg"
+                />
+                <div class="image-note">
+                  <strong>Replace comparison image</strong>
+                  <span>images/comparison-regular-pillow.jpg</span>
+                </div>
+              </div>
+              <span class="comparison-label">Regular pillow</span>
+              <h3>Slides, flattens, shifts</h3>
+              <ul>
+                <li>Moves around while you sleep</li>
+                <li>Flattens under leg pressure</li>
+                <li>Not shaped for knees and thighs</li>
+              </ul>
+            </article>
+
+            <article class="comparison-card comparison-card--highlight">
+              <div class="comparison-image comparison-image--revive image-shell">
+                <!-- Replace this comparison image with your ReviveAlign support example -->
+                <img
+                  src="images/comparison-revivealign.jpg"
+                  alt="ReviveAlign pillow supporting a side sleeper between the legs"
+                  data-placeholder="images/comparison-revivealign.jpg"
+                />
+                <div class="image-note">
+                  <strong>Replace comparison image</strong>
+                  <span>images/comparison-revivealign.jpg</span>
+                </div>
+              </div>
+              <span class="comparison-label">ReviveAlign</span>
+              <h3>Contoured support</h3>
+              <ul>
+                <li>Made for between-leg comfort</li>
+                <li>Strap helps keep it in place</li>
+                <li>Supports hips and knees overnight</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits" id="benefits">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">Benefits</div>
+            <h2>Why Side Sleepers Love It</h2>
+            <p>
+              Simple support that feels more comfortable and more useful than a regular pillow.
+            </p>
+          </div>
+
+          <div class="benefit-grid">
+            <article class="benefit-card">
+              <div class="benefit-icon" aria-hidden="true">01</div>
+              <h3>Less pressure overnight</h3>
+              <p>Helps reduce pressure between the knees and hips while side sleeping.</p>
+            </article>
+
+            <article class="benefit-card">
+              <div class="benefit-icon" aria-hidden="true">02</div>
+              <h3>More comfortable position</h3>
+              <p>Supports a more stable, comfortable sleep position through the night.</p>
+            </article>
+
+            <article class="benefit-card">
+              <div class="benefit-icon" aria-hidden="true">03</div>
+              <h3>Soft memory foam</h3>
+              <p>Contours to your body without flattening like a regular pillow.</p>
+            </article>
+
+            <article class="benefit-card">
+              <div class="benefit-icon" aria-hidden="true">04</div>
+              <h3>Easy to use nightly</h3>
+              <p>Washable cover, simple design, and no complicated setup.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">Reviews</div>
+            <h2>What Customers Are Saying</h2>
+            <p>Real feedback from side sleepers who wanted a more comfortable night.</p>
+          </div>
+
+          <div class="reviews-grid">
+            <blockquote class="review-card">
+              <div class="review-top">
+                <span class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="review-tag">Customer Review</span>
+              </div>
+              <p>&ldquo;I used to wake up fixing my pillow every night. This one actually stays where I need it.&rdquo;</p>
+              <div class="review-person">
+                <div class="review-initial" aria-hidden="true">A</div>
+                <div>
+                  <footer>&mdash; Melissa R.</footer>
+                  <span>Side sleeper</span>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="review-card">
+              <div class="review-top">
+                <span class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="review-tag">Customer Review</span>
+              </div>
+              <p>&ldquo;My knees do not press together the same way now. It is simple, but it helps.&rdquo;</p>
+              <div class="review-person">
+                <div class="review-initial" aria-hidden="true">T</div>
+                <div>
+                  <footer>&mdash; Denise C.</footer>
+                  <span>Knee pressure</span>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="review-card">
+              <div class="review-top">
+                <span class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="review-tag">Customer Review</span>
+              </div>
+              <p>&ldquo;I did not expect much, but I noticed I was tossing around less by the end of the week.&rdquo;</p>
+              <div class="review-person">
+                <div class="review-initial" aria-hidden="true">J</div>
+                <div>
+                  <footer>&mdash; Jenna P.</footer>
+                  <span>Verified customer</span>
+                </div>
+              </div>
+            </blockquote>
+
+          </div>
+
+          <div class="reviews-more" id="reviews-more" data-expanded="false">
+            <div class="reviews-more-inner">
+              <div class="reviews-grid">
+            <blockquote class="review-card">
+              <div class="review-top">
+                <span class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="review-tag">Customer Review</span>
+              </div>
+              <p>&ldquo;Way better than the extra bed pillow I was using. It does not bunch up or slide away as much.&rdquo;</p>
+              <div class="review-person">
+                <div class="review-initial" aria-hidden="true">R</div>
+                <div>
+                  <footer>&mdash; Rachel C.</footer>
+                  <span>Comfort buyer</span>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="review-card">
+              <div class="review-top">
+                <span class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="review-tag">Customer Review</span>
+              </div>
+              <p>&ldquo;My hip feels less irritated in the morning. Not magic, just better support than a normal pillow.&rdquo;</p>
+              <div class="review-person">
+                <div class="review-initial" aria-hidden="true">L</div>
+                <div>
+                  <footer>&mdash; Karen T.</footer>
+                  <span>Hip comfort</span>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="review-card">
+              <div class="review-top">
+                <span class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="review-tag">Customer Review</span>
+              </div>
+              <p>&ldquo;I like that it has the strap. I sleep on my side almost all night and it stays put.&rdquo;</p>
+              <div class="review-person">
+                <div class="review-initial" aria-hidden="true">M</div>
+                <div>
+                  <footer>&mdash; Lauren B.</footer>
+                  <span>Side sleeper</span>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="review-card">
+              <div class="review-top">
+                <span class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="review-tag">Customer Review</span>
+              </div>
+              <p>&ldquo;Took one night to get used to it. Now I reach for it automatically before bed.&rdquo;</p>
+              <div class="review-person">
+                <div class="review-initial" aria-hidden="true">N</div>
+                <div>
+                  <footer>&mdash; Nicole H.</footer>
+                  <span>Nightly use</span>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="review-card">
+              <div class="review-top">
+                <span class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="review-tag">Customer Review</span>
+              </div>
+              <p>&ldquo;I was close to buying a mattress topper, but tried this first. Glad I did.&rdquo;</p>
+              <div class="review-person">
+                <div class="review-initial" aria-hidden="true">S</div>
+                <div>
+                  <footer>&mdash; Sarah D.</footer>
+                  <span>Skeptical buyer</span>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="review-card">
+              <div class="review-top">
+                <span class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="review-tag">Customer Review</span>
+              </div>
+              <p>&ldquo;Soft but supportive. I bought one for myself and came back for a second.&rdquo;</p>
+              <div class="review-person">
+                <div class="review-initial" aria-hidden="true">K</div>
+                <div>
+                  <footer>&mdash; Kim W.</footer>
+                  <span>Repeat buyer</span>
+                </div>
+              </div>
+            </blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="reviews-actions">
+            <button
+              class="button button-secondary reviews-toggle"
+              id="reviews-toggle"
+              type="button"
+              aria-controls="reviews-more"
+              aria-expanded="false"
+            >
+              Show More Reviews
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">Guarantee</div>
+            <h2>Try ReviveAlign for 60 Nights, Risk-Free</h2>
+            <p>
+              Use your ReviveAlign Pillow for up to 60 nights. If you're not satisfied, contact
+              us for a full refund.
+            </p>
+          </div>
+
+          <div class="guarantee-wrap">
+            <div class="guarantee-panel">
+              <div class="seal" aria-label="60 Nights Money-Back Guarantee">
+                <div class="seal-inner">
+                  <span class="seal-top">60 Nights</span>
+                  <span class="seal-number">60</span>
+                  <span class="seal-bottom">Money-Back Guarantee</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-panel">
+              <details class="faq-item" open>
+                <summary class="faq-question">
+                  <span>Who is this pillow for?</span>
+                  <span aria-hidden="true">+</span>
+                </summary>
+                <div class="faq-answer">
+                  <p>
+                    It's designed for side sleepers who want more support between the legs,
+                    knees, and hips during sleep.
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>Is the cover washable?</span>
+                  <span aria-hidden="true">+</span>
+                </summary>
+                <div class="faq-answer">
+                  <p>Yes. The cover is removable and washable.</p>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>Does it stay in place?</span>
+                  <span aria-hidden="true">+</span>
+                </summary>
+                <div class="faq-answer">
+                  <p>
+                    It's designed to stay in place better than a regular pillow, and includes a
+                    strap for added stability.
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>What if I don't like it?</span>
+                  <span aria-hidden="true">+</span>
+                </summary>
+                <div class="faq-answer">
+                  <p>You're covered by the 60-night money-back guarantee.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="container">
+          <div class="cta-band">
+            <div class="cta-band-inner">
+              <div>
+                <h2>Get Better Side-Sleeping Support Tonight</h2>
+                <p>
+                  Order your ReviveAlign Side Sleeper Alignment Pillow now with free shipping
+                  and a 60-night risk-free trial.
+                </p>
+                <div class="cta-offer-row" aria-label="Final offer details">
+                  <span>Free Shipping Today</span>
+                  <span>60-Night Risk-Free Trial</span>
+                  <span>Save 50% Today</span>
+                </div>
+              </div>
+              <a class="button button-secondary" href="#buy-box">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sticky-desktop-cta" id="sticky-desktop-cta" aria-label="Quick order bar">
+      <div class="sticky-desktop-inner">
+        <div class="sticky-desktop-copy">
+          <strong>ReviveAlign Side Sleeper Pillow</strong>
+          <span>$34.95 today &middot; Free shipping &middot; 60-night trial</span>
+        </div>
+        <a class="button button-primary" href="#buy-box">Order Now</a>
+      </div>
+    </aside>
+
+    <aside class="sticky-mobile-cta" aria-label="Mobile quick order bar">
+      <div class="sticky-mobile-inner">
+        <div class="sticky-mobile-price">
+          <strong>$34.95</strong>
+          <span>Free shipping today</span>
+        </div>
+        <a class="button button-primary" href="#buy-box">Order Now</a>
+      </div>
+    </aside>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="mailto:support@revivealign.com">support@revivealign.com</a>
+          <span>&copy; 2026 ReviveAlign</span>
+        </div>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="contact.html">Contact</a>
+          <a href="shipping-policy.html">Shipping Policy</a>
+          <a href="return-refund-policy.html">Return &amp; Refund Policy</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="manage-membership.html">Manage Membership</a>
+          <a href="terms-of-service.html">Terms of Service</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      const navToggle = document.querySelector(".header-toggle");
+      const siteNav = document.getElementById("site-nav");
+      const bundleInputs = document.querySelectorAll('input[name="bundle"]');
+      const addonInputs = document.querySelectorAll(".addon-option input");
+      const priceNode = document.getElementById("sale-price");
+      const estimatedTotal = document.getElementById("estimated-total");
+      const estimatedTotalNote = document.getElementById("estimated-total-note");
+      const purchaseCta = document.getElementById("purchase-cta");
+      const stickyMobilePrice = document.querySelector(".sticky-mobile-price strong");
+      const stickyMobileNote = document.querySelector(".sticky-mobile-price span");
+      const stickyDesktopNote = document.querySelector(".sticky-desktop-copy span");
+      const faqItems = document.querySelectorAll(".faq-item");
+      const imageShells = document.querySelectorAll(".image-shell");
+      const reviewsMore = document.getElementById("reviews-more");
+      const reviewsToggle = document.getElementById("reviews-toggle");
+      const heroSection = document.querySelector(".hero");
+      const stickyDesktopCta = document.getElementById("sticky-desktop-cta");
+
+      if (navToggle && siteNav) {
+        navToggle.addEventListener("click", () => {
+          const isOpen = siteNav.classList.toggle("is-open");
+          navToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        siteNav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            siteNav.classList.remove("is-open");
+            navToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      const formatMoney = (amount) => `$${amount.toFixed(2)}`;
+
+      const parseMoney = (value) => Number(String(value || "0").replace(/[^0-9.]/g, ""));
+
+      const updateOfferState = () => {
+        const selectedBundle = document.querySelector('input[name="bundle"]:checked');
+        if (!selectedBundle) return;
+
+        const productPrice = parseMoney(selectedBundle.dataset.price || "$34.95");
+        const addonTotal = Array.from(addonInputs).reduce((total, input) => {
+          return total + (input.checked ? Number(input.dataset.price || 0) : 0);
+        }, 0);
+        const todayTotal = productPrice + addonTotal;
+
+        priceNode.textContent = selectedBundle.dataset.price || "$34.95";
+        if (estimatedTotal) estimatedTotal.textContent = formatMoney(todayTotal);
+        if (stickyMobilePrice) stickyMobilePrice.textContent = formatMoney(todayTotal);
+        if (stickyMobileNote) {
+          stickyMobileNote.textContent = "Free shipping today";
+        }
+        if (stickyDesktopNote) {
+          stickyDesktopNote.textContent = `${formatMoney(todayTotal)} today | Free shipping | 60-night trial`;
+        }
+        if (estimatedTotalNote) {
+          const hasShippingProtection = document.getElementById("shipping-protection")?.checked;
+          estimatedTotalNote.textContent = hasShippingProtection
+            ? "Includes optional Shipping Protection. You can remove it before ordering."
+            : "Shipping Protection removed. Free shipping still applies today.";
+        }
+
+        purchaseCta.textContent = selectedBundle.dataset.cta || "Try ReviveAlign Risk-Free";
+        purchaseCta.setAttribute("href", selectedBundle.dataset.checkout || "#buy-box");
+        purchaseCta.setAttribute(
+          "aria-label",
+          `${purchaseCta.textContent} - ${selectedBundle.value} estimated today ${formatMoney(todayTotal)}`
+        );
+      };
+
+      bundleInputs.forEach((input) => {
+        input.addEventListener("change", updateOfferState);
+      });
+
+      addonInputs.forEach((input) => {
+        input.addEventListener("change", updateOfferState);
+      });
+
+      updateOfferState();
+
+      faqItems.forEach((item) => {
+        item.addEventListener("toggle", () => {
+          if (!item.open) return;
+          faqItems.forEach((otherItem) => {
+            if (otherItem !== item) otherItem.open = false;
+          });
+        });
+      });
+
+      if (reviewsMore && reviewsToggle) {
+        reviewsToggle.addEventListener("click", () => {
+          const isExpanded = reviewsMore.dataset.expanded === "true";
+          const nextState = String(!isExpanded);
+
+          reviewsMore.dataset.expanded = nextState;
+          reviewsToggle.setAttribute("aria-expanded", nextState);
+          reviewsToggle.textContent = isExpanded ? "Show More Reviews" : "Show Fewer Reviews";
+        });
+      }
+
+      if (heroSection && stickyDesktopCta) {
+        const updateStickyDesktopCta = () => {
+          const heroBottom = heroSection.getBoundingClientRect().bottom;
+          stickyDesktopCta.classList.toggle("is-visible", heroBottom < 0);
+        };
+
+        updateStickyDesktopCta();
+        window.addEventListener("scroll", updateStickyDesktopCta, { passive: true });
+        window.addEventListener("resize", updateStickyDesktopCta);
+      }
+
+      imageShells.forEach((shell) => {
+        const image = shell.querySelector("img");
+        if (!image) return;
+
+        const markPlaceholder = () => {
+          shell.classList.add("is-placeholder");
+          image.style.opacity = "0";
+        };
+
+        const clearPlaceholder = () => {
+          shell.classList.remove("is-placeholder");
+          image.style.opacity = "1";
+        };
+
+        image.addEventListener("error", markPlaceholder);
+        image.addEventListener("load", clearPlaceholder);
+
+        if (image.complete && image.naturalWidth === 0) {
+          markPlaceholder();
+        }
+      });
+    </script>
+  </body>
 </html>
