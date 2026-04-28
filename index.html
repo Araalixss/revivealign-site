@@ -1084,6 +1084,74 @@ EDIT GUIDE
         font-size: 0.72rem;
       }
 
+      .pain-explain {
+        padding: 3.1rem 0;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(236, 242, 248, 0.36));
+      }
+
+      .pain-explain-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .pain-explain h2 {
+        margin: 0.65rem 0 0;
+        font-family: "Fraunces", serif;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+      }
+
+      .pain-explain-copy {
+        padding: 1.45rem;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(120, 147, 180, 0.12);
+        box-shadow: var(--shadow-xs);
+      }
+
+      .pain-explain-copy p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.02rem;
+        line-height: 1.76;
+      }
+
+      .pain-explain-copy p + p {
+        margin-top: 0.85rem;
+      }
+
+      .pain-highlight {
+        display: grid;
+        gap: 0.72rem;
+        margin-top: 1.2rem;
+      }
+
+      .pain-highlight span {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.65rem;
+        color: var(--text);
+        font-weight: 800;
+      }
+
+      .pain-highlight span::before {
+        content: "\2713";
+        flex: 0 0 auto;
+        width: 1.35rem;
+        height: 1.35rem;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(120, 147, 180, 0.14);
+        color: var(--accent-deep);
+        font-size: 0.78rem;
+        margin-top: 0.12rem;
+      }
+
       section {
         padding: 4.15rem 0;
         scroll-margin-top: calc(var(--header-height) + 1.5rem);
@@ -1800,6 +1868,7 @@ EDIT GUIDE
         }
 
         .hero-grid,
+        .pain-explain-grid,
         .comparison-grid,
         .reviews-grid,
         .guarantee-wrap,
@@ -1866,6 +1935,10 @@ EDIT GUIDE
           justify-self: center;
         }
 
+        .pain-explain {
+          padding: 2.6rem 0;
+        }
+
         .cta-band-inner {
           gap: 1.25rem;
         }
@@ -1916,6 +1989,11 @@ EDIT GUIDE
 
         section {
           padding: 3.3rem 0;
+        }
+
+        .pain-explain-copy {
+          border-radius: 22px;
+          padding: 1.2rem;
         }
 
         #why-it-works {
@@ -2219,6 +2297,19 @@ EDIT GUIDE
           padding: 2.75rem 0;
         }
 
+        .pain-explain {
+          padding: 2.3rem 0;
+        }
+
+        .pain-explain h2 {
+          font-size: clamp(1.9rem, 8vw, 2.45rem);
+        }
+
+        .pain-explain-copy p {
+          font-size: 0.96rem;
+          line-height: 1.65;
+        }
+
         #why-it-works {
           padding-top: 1.65rem;
         }
@@ -2305,16 +2396,17 @@ EDIT GUIDE
               <div class="hero-copy-wrap">
                 <div class="eyebrow">For side sleepers with hip, knee, or back discomfort</div>
                 <div>
-                  <h1>Sleep On Your Side Without <br class="hero-break" />Hip &amp; Knee Pressure.</h1>
+                  <h1>Finally Sleep On Your Side With <br class="hero-break" />Less Morning Hip Pain</h1>
                   <p>
                     A contoured side-sleeper pillow designed to stay between your legs and
                     support a more comfortable sleeping position overnight.
                   </p>
                 </div>
                 <ul class="hero-benefits" aria-label="Key product benefits">
-                  <li>Helps keep your hips and knees in a more supported position</li>
-                  <li>Stays in place better than a regular pillow</li>
-                  <li>Soft memory foam comfort through the night</li>
+                  <li>Reduces hip pressure while side sleeping</li>
+                  <li>Helps prevent knees rubbing together</li>
+                  <li>Supports spinal alignment overnight</li>
+                  <li>Wake up with less stiffness</li>
                 </ul>
               </div>
             </div>
@@ -2327,7 +2419,7 @@ EDIT GUIDE
                 </span>
                 <span class="rating-context">Based on 1,200+ side sleeper reviews</span>
               </div>
-              <h2>ReviveAlign Side Sleeper Alignment Pillow</h2>
+              <h2>ReviveAlign Relief Pillow</h2>
               <div class="price-row">
                 <span class="sale-price" id="sale-price">$34.95</span>
                 <span class="compare-price">$69.90</span>
@@ -2379,7 +2471,7 @@ EDIT GUIDE
                     name="bundle"
                     value="1 Pillow"
                     data-price="$34.95"
-                    data-cta="Try ReviveAlign Risk-Free"
+                    data-cta="Try It Tonight Risk-Free"
                     data-checkout="#buy-box"
                     checked
                   />
@@ -2399,15 +2491,15 @@ EDIT GUIDE
                     name="bundle"
                     value="2 Pillows"
                     data-price="$59.90"
-                    data-cta="Try ReviveAlign Risk-Free"
+                    data-cta="Try It Tonight Risk-Free"
                     data-checkout="#buy-box"
                   />
                   <span class="bundle-card">
                     <span class="bundle-indicator" aria-hidden="true"></span>
                     <span class="bundle-text">
                       <strong>2 Pillows</strong>
-                      <span>Best value &middot; Save more</span>
-                      <span class="bundle-tag">Best value</span>
+                      <span>Save 14% + Free Shipping</span>
+                      <span class="bundle-tag">Most Popular</span>
                     </span>
                     <span class="bundle-price">$59.90</span>
                   </span>
@@ -2443,14 +2535,38 @@ EDIT GUIDE
               </div>
 
               <a class="button button-primary purchase-cta" id="purchase-cta" href="#buy-box">
-                Try ReviveAlign Risk-Free
+                Try It Tonight Risk-Free
               </a>
               <div class="trust-row">
-                <span>Free Shipping Today</span>
-                <span>60-Night Trial</span>
-                <span>Secure Checkout</span>
+                <span>Loved by 12,000+ side sleepers</span>
+                <span>4.8 average rating</span>
+                <span>60-night trial</span>
               </div>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="pain-explain" aria-labelledby="pain-explain-title">
+        <div class="container pain-explain-grid">
+          <div>
+            <div class="section-kicker">Why You Wake Up In Pain</div>
+            <h2 id="pain-explain-title">Side sleeping can quietly strain your hips all night.</h2>
+          </div>
+          <div class="pain-explain-copy">
+            <p>
+              When sleeping on your side, the top leg often drops forward. That can twist the
+              hips and pull the lower back out of alignment.
+            </p>
+            <p>
+              That pressure can build for 6-8 hours while you sleep. ReviveAlign supports your
+              legs to help keep your hips stacked and reduce overnight strain.
+            </p>
+            <div class="pain-highlight" aria-label="How ReviveAlign helps">
+              <span>Keeps your knees separated more comfortably</span>
+              <span>Helps reduce pressure through the hips and lower body</span>
+              <span>Supports a steadier side-sleeping position overnight</span>
+            </div>
           </div>
         </div>
       </section>
@@ -2459,11 +2575,10 @@ EDIT GUIDE
         <div class="container">
           <div class="section-head">
             <div class="section-kicker">Why It Works</div>
-            <h2>Why It Works Better Than a Regular Pillow</h2>
+            <h2>Regular Pillow vs ReviveAlign</h2>
             <p>
-              A regular pillow can help for a little while, but it often slips away during the
-              night. ReviveAlign is made for between-leg support, so it feels more stable and
-              more useful for side sleepers.
+              Regular pillows were made for your head, not your knees. ReviveAlign is shaped
+              for side sleepers who need steadier support between the legs.
             </p>
           </div>
 
@@ -2796,10 +2911,10 @@ EDIT GUIDE
           <div class="cta-band">
             <div class="cta-band-inner">
               <div>
-                <h2>Get Better Side-Sleeping Support Tonight</h2>
+                <h2>Wake Up With Less Side-Sleeping Pain</h2>
                 <p>
-                  Order your ReviveAlign Side Sleeper Alignment Pillow now with free shipping
-                  and a 60-night risk-free trial.
+                  Order your ReviveAlign Relief Pillow now with free shipping and a 60-night
+                  risk-free trial.
                 </p>
                 <div class="cta-offer-row" aria-label="Final offer details">
                   <span>Free Shipping Today</span>
@@ -2817,20 +2932,20 @@ EDIT GUIDE
     <aside class="sticky-desktop-cta" id="sticky-desktop-cta" aria-label="Quick order bar">
       <div class="sticky-desktop-inner">
         <div class="sticky-desktop-copy">
-          <strong>ReviveAlign Side Sleeper Pillow</strong>
-          <span>$34.95 today &middot; Free shipping &middot; 60-night trial</span>
+          <strong>ReviveAlign Relief Pillow</strong>
+          <span>$39.94 today &middot; Free shipping &middot; 60-night trial</span>
         </div>
-        <a class="button button-primary" href="#buy-box">Order Now</a>
+        <a class="button button-primary" href="#buy-box">Try It Tonight</a>
       </div>
     </aside>
 
     <aside class="sticky-mobile-cta" aria-label="Mobile quick order bar">
       <div class="sticky-mobile-inner">
         <div class="sticky-mobile-price">
-          <strong>$34.95</strong>
+          <strong>$39.94</strong>
           <span>Free shipping today</span>
         </div>
-        <a class="button button-primary" href="#buy-box">Order Now</a>
+        <a class="button button-primary" href="#buy-box">Try It Tonight</a>
       </div>
     </aside>
 
@@ -2914,7 +3029,7 @@ EDIT GUIDE
             : "Shipping Protection removed. Free shipping still applies today.";
         }
 
-        purchaseCta.textContent = selectedBundle.dataset.cta || "Try ReviveAlign Risk-Free";
+        purchaseCta.textContent = selectedBundle.dataset.cta || "Try It Tonight Risk-Free";
         purchaseCta.setAttribute("href", selectedBundle.dataset.checkout || "#buy-box");
         purchaseCta.setAttribute(
           "aria-label",
