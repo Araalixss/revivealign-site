@@ -1084,6 +1084,36 @@ EDIT GUIDE
         font-size: 0.72rem;
       }
 
+      .shipping-promise {
+        margin-top: 0.62rem;
+        display: grid;
+        gap: 0.38rem;
+        padding: 0.74rem 0.82rem;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.66);
+        border: 1px solid rgba(39, 73, 107, 0.09);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      }
+
+      .shipping-promise span {
+        display: flex;
+        align-items: center;
+        gap: 0.48rem;
+        color: var(--muted);
+        font-size: 0.79rem;
+        font-weight: 750;
+        line-height: 1.35;
+      }
+
+      .shipping-promise span::before {
+        content: "";
+        flex: 0 0 auto;
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: rgba(46, 125, 105, 0.72);
+      }
+
       .pain-explain {
         padding: 3.1rem 0;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(236, 242, 248, 0.36));
@@ -2293,6 +2323,15 @@ EDIT GUIDE
           font-size: 0.76rem;
         }
 
+        .shipping-promise {
+          margin-top: 0.55rem;
+          padding: 0.68rem 0.72rem;
+        }
+
+        .shipping-promise span {
+          font-size: 0.75rem;
+        }
+
         section {
           padding: 2.75rem 0;
         }
@@ -2396,7 +2435,7 @@ EDIT GUIDE
               <div class="hero-copy-wrap">
                 <div class="eyebrow">For side sleepers with hip, knee, or back discomfort</div>
                 <div>
-                  <h1>Finally Sleep On Your Side With <br class="hero-break" />Less Morning Hip Pain</h1>
+                  <h1>Stop Sleeping With <br class="hero-break" />Hip &amp; Knee Pressure</h1>
                   <p>
                     A contoured side-sleeper pillow designed to stay between your legs and
                     support a more comfortable sleeping position overnight.
@@ -2541,6 +2580,11 @@ EDIT GUIDE
                 <span>Loved by 12,000+ side sleepers</span>
                 <span>4.8 average rating</span>
                 <span>60-night trial</span>
+              </div>
+              <div class="shipping-promise" aria-label="Shipping details">
+                <span>Free Tracked Shipping</span>
+                <span>Ships in 24-48 Hours</span>
+                <span>Estimated Delivery 7-12 Business Days</span>
               </div>
             </aside>
           </div>
