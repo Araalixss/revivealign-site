@@ -1123,7 +1123,7 @@ EDIT GUIDE
       .carousel-main {
         position: relative;
         overflow: hidden;
-        aspect-ratio: 1 / 0.82;
+        aspect-ratio: 1 / 1;
         border-radius: 30px;
         background:
           radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.96), transparent 34%),
@@ -1141,7 +1141,7 @@ EDIT GUIDE
         height: 100%;
         object-fit: contain;
         object-position: center;
-        background: #ffffff;
+        background: transparent;
         transition:
           opacity 180ms ease,
           transform 260ms ease;
@@ -2271,12 +2271,13 @@ EDIT GUIDE
         }
 
         .carousel-main {
-          aspect-ratio: 1 / 0.92;
+          aspect-ratio: 1 / 1;
           border-radius: 20px;
         }
 
         .carousel-main img {
-          object-fit: cover;
+          object-fit: contain;
+          object-position: center top;
         }
 
         .carousel-arrow {
