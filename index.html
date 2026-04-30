@@ -1550,6 +1550,196 @@ EDIT GUIDE
         white-space: nowrap;
       }
 
+      .cart-drawer {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        pointer-events: none;
+      }
+
+      .cart-drawer.is-open {
+        pointer-events: auto;
+      }
+
+      .cart-drawer-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(21, 48, 74, 0.34);
+        opacity: 0;
+        transition: opacity 180ms ease;
+      }
+
+      .cart-drawer.is-open .cart-drawer-overlay {
+        opacity: 1;
+      }
+
+      .cart-drawer-panel {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: min(100%, 430px);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 1.25rem;
+        background:
+          radial-gradient(circle at top left, rgba(255, 255, 255, 0.94), transparent 34%),
+          linear-gradient(180deg, #fffdf9 0%, #f5f2ed 100%);
+        border-left: 1px solid rgba(39, 73, 107, 0.12);
+        box-shadow: -28px 0 60px rgba(21, 48, 74, 0.18);
+        transform: translateX(102%);
+        transition: transform 220ms ease;
+      }
+
+      .cart-drawer.is-open .cart-drawer-panel {
+        transform: translateX(0);
+      }
+
+      .cart-drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(39, 73, 107, 0.1);
+      }
+
+      .cart-drawer-header h2 {
+        font-family: "Fraunces", serif;
+        font-size: 1.7rem;
+        letter-spacing: -0.04em;
+      }
+
+      .cart-close {
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(39, 73, 107, 0.12);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--accent-deep);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .cart-close:hover,
+      .cart-close:focus-visible {
+        background: #ffffff;
+      }
+
+      .cart-drawer-body {
+        flex: 1;
+        padding: 1.1rem 0;
+      }
+
+      .cart-item {
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        gap: 0.95rem;
+        padding: 0.95rem;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(39, 73, 107, 0.1);
+        box-shadow: 0 14px 26px rgba(21, 48, 74, 0.06);
+      }
+
+      .cart-item-image {
+        overflow: hidden;
+        aspect-ratio: 1;
+        border-radius: 16px;
+        background: #ffffff;
+        border: 1px solid rgba(39, 73, 107, 0.08);
+      }
+
+      .cart-item-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .cart-item-copy {
+        min-width: 0;
+      }
+
+      .cart-item-title {
+        display: block;
+        color: var(--text);
+        font-size: 1rem;
+        line-height: 1.25;
+        font-weight: 850;
+      }
+
+      .cart-item-meta {
+        display: block;
+        margin-top: 0.28rem;
+        color: var(--muted);
+        font-size: 0.86rem;
+        font-weight: 750;
+      }
+
+      .cart-item-price {
+        display: block;
+        margin-top: 0.62rem;
+        color: var(--accent-deep);
+        font-family: "Fraunces", serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+
+      .cart-summary {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 18px;
+        background: rgba(236, 242, 248, 0.72);
+        border: 1px solid rgba(39, 73, 107, 0.1);
+      }
+
+      .cart-summary-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        color: var(--text);
+        font-weight: 850;
+      }
+
+      .cart-summary-row strong {
+        font-family: "Fraunces", serif;
+        font-size: 1.42rem;
+        letter-spacing: -0.03em;
+      }
+
+      .cart-summary-note {
+        margin: 0.4rem 0 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .cart-drawer-footer {
+        display: grid;
+        gap: 0.75rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(39, 73, 107, 0.1);
+      }
+
+      .cart-checkout {
+        width: 100%;
+      }
+
+      .cart-continue {
+        min-height: 50px;
+        border-radius: 18px;
+        border: 1px solid rgba(39, 73, 107, 0.12);
+        background: rgba(255, 255, 255, 0.74);
+        color: var(--accent-deep);
+        font-weight: 850;
+        cursor: pointer;
+      }
+
       .comparison-card h3 {
         margin-top: 0.95rem;
         font-size: 1.72rem;
@@ -2517,6 +2707,29 @@ EDIT GUIDE
           display: block;
         }
 
+        .cart-drawer-panel {
+          top: auto;
+          bottom: 0;
+          width: 100%;
+          height: auto;
+          max-height: min(86vh, 620px);
+          border-left: 0;
+          border-top: 1px solid rgba(39, 73, 107, 0.12);
+          border-radius: 26px 26px 0 0;
+          transform: translateY(104%);
+          padding: 1rem;
+          padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+        }
+
+        .cart-drawer.is-open .cart-drawer-panel {
+          transform: translateY(0);
+        }
+
+        .cart-item {
+          grid-template-columns: 82px 1fr;
+          padding: 0.82rem;
+        }
+
         .hero {
           padding-bottom: 1rem;
         }
@@ -2682,11 +2895,7 @@ EDIT GUIDE
             <a href="#reviews">Reviews</a>
             <a href="#faq">FAQ</a>
           </nav>
-          <a
-            class="button button-secondary"
-            href="https://f1bwhv-vb.myshopify.com/cart/51909835587904:1"
-            data-checkout-cta
-          >Order Now</a>
+          <a class="button button-secondary" href="#buy-box">Order Now</a>
           <button
             class="header-toggle"
             type="button"
@@ -3313,11 +3522,7 @@ EDIT GUIDE
                   <span>Save $15 Today</span>
                 </div>
               </div>
-              <a
-                class="button button-secondary"
-                href="https://f1bwhv-vb.myshopify.com/cart/51909835587904:1"
-                data-checkout-cta
-              >Order Now</a>
+              <a class="button button-secondary" href="#buy-box">Order Now</a>
             </div>
           </div>
         </div>
@@ -3351,6 +3556,61 @@ EDIT GUIDE
         >Try It Tonight</a>
       </div>
     </aside>
+
+    <div class="cart-drawer" id="cart-drawer" aria-hidden="true">
+      <div class="cart-drawer-overlay" data-cart-close></div>
+      <aside
+        class="cart-drawer-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cart-drawer-title"
+      >
+        <div class="cart-drawer-header">
+          <h2 id="cart-drawer-title">Your Cart</h2>
+          <button class="cart-close" type="button" data-cart-close aria-label="Close cart">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 6l12 12M18 6L6 18"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="cart-drawer-body">
+          <div class="cart-item">
+            <div class="cart-item-image">
+              <img
+                src="images/hero-side-sleeper.jpg"
+                alt="ReviveAlign Side Sleep Pillow"
+                data-cart-image
+              />
+            </div>
+            <div class="cart-item-copy">
+              <strong class="cart-item-title" data-cart-title>ReviveAlign Side Sleep Pillow</strong>
+              <span class="cart-item-meta" data-cart-bundle>1 Pillow</span>
+              <span class="cart-item-price" data-cart-price>$34.95</span>
+            </div>
+          </div>
+
+          <div class="cart-summary">
+            <div class="cart-summary-row">
+              <span>Subtotal</span>
+              <strong data-cart-subtotal>$34.95</strong>
+            </div>
+            <p class="cart-summary-note">Free tracked shipping included today.</p>
+          </div>
+        </div>
+
+        <div class="cart-drawer-footer">
+          <a
+            class="button button-primary cart-checkout"
+            href="https://f1bwhv-vb.myshopify.com/cart/51909835587904:1"
+            data-cart-checkout
+          >
+            Checkout
+          </a>
+          <button class="cart-continue" type="button" data-cart-close>Continue Shopping</button>
+        </div>
+      </aside>
+    </div>
 
     <footer class="footer">
       <div class="container footer-inner">
@@ -3388,6 +3648,12 @@ EDIT GUIDE
       const heroSection = document.querySelector(".hero");
       const stickyDesktopCta = document.getElementById("sticky-desktop-cta");
       const productCarousel = document.querySelector("[data-product-carousel]");
+      const cartDrawer = document.getElementById("cart-drawer");
+      const cartCloseButtons = document.querySelectorAll("[data-cart-close]");
+      const cartCheckout = document.querySelector("[data-cart-checkout]");
+      const cartBundle = document.querySelector("[data-cart-bundle]");
+      const cartPrice = document.querySelector("[data-cart-price]");
+      const cartSubtotal = document.querySelector("[data-cart-subtotal]");
       const shopifyCartLinks = {
         "1 Pillow": "https://f1bwhv-vb.myshopify.com/cart/51909835587904:1",
         "2 Pillows": "https://f1bwhv-vb.myshopify.com/cart/51909835620672:1",
@@ -3411,6 +3677,43 @@ EDIT GUIDE
 
       const parseMoney = (value) => Number(String(value || "0").replace(/[^0-9.]/g, ""));
 
+      const getSelectedBundle = () => {
+        const selectedBundle = document.querySelector('input[name="bundle"]:checked');
+        const value = selectedBundle?.value || "1 Pillow";
+        const price = selectedBundle?.dataset.price || "$34.95";
+        const checkoutHref =
+          shopifyCartLinks[value] ||
+          selectedBundle?.dataset.checkout ||
+          shopifyCartLinks["1 Pillow"];
+
+        return { value, price, checkoutHref };
+      };
+
+      const updateCartDrawer = () => {
+        const selected = getSelectedBundle();
+        if (cartBundle) cartBundle.textContent = selected.value;
+        if (cartPrice) cartPrice.textContent = selected.price;
+        if (cartSubtotal) cartSubtotal.textContent = selected.price;
+        if (cartCheckout) cartCheckout.setAttribute("href", selected.checkoutHref);
+        return selected;
+      };
+
+      const openCartDrawer = () => {
+        updateCartDrawer();
+        if (!cartDrawer) return;
+        cartDrawer.classList.add("is-open");
+        cartDrawer.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        cartCheckout?.focus();
+      };
+
+      const closeCartDrawer = () => {
+        if (!cartDrawer) return;
+        cartDrawer.classList.remove("is-open");
+        cartDrawer.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      };
+
       const updateOfferState = () => {
         const selectedBundle = document.querySelector('input[name="bundle"]:checked');
         if (!selectedBundle) return;
@@ -3431,10 +3734,7 @@ EDIT GUIDE
           estimatedTotalNote.textContent = "Free tracked shipping included today.";
         }
 
-        const checkoutHref =
-          shopifyCartLinks[selectedBundle.value] ||
-          selectedBundle.dataset.checkout ||
-          shopifyCartLinks["1 Pillow"];
+        const { checkoutHref } = getSelectedBundle();
 
         purchaseCta.textContent = selectedBundle.dataset.cta || "Try It Tonight";
         checkoutCtas.forEach((cta) => {
@@ -3444,6 +3744,7 @@ EDIT GUIDE
             `${cta.textContent.trim()} - ${selectedBundle.value} estimated today ${formatMoney(todayTotal)}`
           );
         });
+        updateCartDrawer();
       };
 
       bundleInputs.forEach((input) => {
@@ -3454,16 +3755,17 @@ EDIT GUIDE
 
       checkoutCtas.forEach((cta) => {
         cta.addEventListener("click", (event) => {
-          const selectedBundle = document.querySelector('input[name="bundle"]:checked');
-          const checkoutHref =
-            shopifyCartLinks[selectedBundle?.value] ||
-            selectedBundle?.dataset.checkout ||
-            shopifyCartLinks["1 Pillow"];
-
-          cta.setAttribute("href", checkoutHref);
           event.preventDefault();
-          window.location.href = checkoutHref;
+          openCartDrawer();
         });
+      });
+
+      cartCloseButtons.forEach((button) => {
+        button.addEventListener("click", closeCartDrawer);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeCartDrawer();
       });
 
       faqItems.forEach((item) => {
