@@ -939,9 +939,9 @@ EDIT GUIDE
       .addon-option {
         position: relative;
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.35rem;
-        align-items: start;
+        grid-template-columns: 1fr auto;
+        gap: 0.55rem 0.8rem;
+        align-items: center;
         padding: 0.92rem 0.95rem;
         border-radius: 18px;
         border: 1px solid rgba(39, 73, 107, 0.12);
@@ -984,16 +984,48 @@ EDIT GUIDE
       }
 
       .addon-price {
+        grid-column: 1 / -1;
         color: var(--muted);
         font-size: 0.78rem;
         font-weight: 800;
         letter-spacing: 0.01em;
       }
 
+      .addon-status {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 78px;
+        min-height: 30px;
+        padding: 0.28rem 0.58rem;
+        border-radius: 999px;
+        border: 1px solid rgba(39, 73, 107, 0.12);
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 850;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+
+      .addon-status::before {
+        content: "Not added";
+      }
+
       .addon-option:has(input:checked) {
         border-color: rgba(39, 73, 107, 0.18);
         background: linear-gradient(180deg, rgba(249, 251, 253, 0.95), rgba(239, 245, 250, 0.82));
         box-shadow: 0 12px 22px rgba(21, 48, 74, 0.06);
+      }
+
+      .addon-option:has(input:checked) .addon-status {
+        border-color: rgba(46, 125, 105, 0.2);
+        background: rgba(46, 125, 105, 0.1);
+        color: var(--success);
+      }
+
+      .addon-option:has(input:checked) .addon-status::before {
+        content: "Added";
       }
 
       .order-total {
@@ -2558,6 +2590,7 @@ EDIT GUIDE
                     <strong>Shipping Protection</strong>
                     <span>Covers eligible lost, stolen, or damaged packages in transit.</span>
                   </span>
+                  <span class="addon-status" aria-hidden="true"></span>
                   <span class="addon-price">+$4.99</span>
                 </label>
               </div>
@@ -2568,7 +2601,7 @@ EDIT GUIDE
                   <strong id="estimated-total">$34.95</strong>
                 </div>
                 <p class="order-total-note" id="estimated-total-note">
-                  Free shipping included today. Optional Shipping Protection can be added.
+                  Shipping Protection is not added. Free shipping is still included today.
                 </p>
               </div>
 
@@ -3071,8 +3104,8 @@ EDIT GUIDE
         if (estimatedTotalNote) {
           const hasShippingProtection = document.getElementById("shipping-protection")?.checked;
           estimatedTotalNote.textContent = hasShippingProtection
-            ? "Includes optional Shipping Protection. You can remove it before ordering."
-            : "Free shipping included today. Optional Shipping Protection can be added.";
+            ? "Shipping Protection is added. Your order is covered in transit."
+            : "Shipping Protection is not added. Free shipping is still included today.";
         }
 
         purchaseCta.textContent = selectedBundle.dataset.cta || "Try It Tonight";
