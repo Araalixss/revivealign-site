@@ -1250,6 +1250,10 @@ EDIT GUIDE
         max-width: 31rem;
       }
 
+      .hero-visual .carousel-main img {
+        border-radius: 24px;
+      }
+
       .hero-visual .carousel-main {
         border-radius: 32px;
       }
@@ -2289,6 +2293,14 @@ EDIT GUIDE
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
+        .hero-visual {
+          gap: 0.18rem;
+        }
+
+        .carousel-thumbs {
+          margin-top: 0.48rem;
+        }
+
         .pain-explain-copy {
           border-radius: 22px;
           padding: 1.2rem;
@@ -2489,7 +2501,7 @@ EDIT GUIDE
         }
 
         .hero-grid {
-          gap: 0.58rem;
+          gap: 0.4rem;
         }
 
         h1 {
@@ -2513,6 +2525,7 @@ EDIT GUIDE
 
         .purchase-card {
           padding: 0.98rem;
+          margin-top: 0.05rem;
         }
 
         .purchase-stars {
@@ -2672,7 +2685,7 @@ EDIT GUIDE
               <div class="carousel-main" data-carousel-stage>
                 <!-- Replace carousel image sources here when updating product photography. -->
                 <img
-                  src="images/carousel-lifestyle.png"
+                  src="images/hero-side-sleeper.jpg"
                   alt="ReviveAlign pillow shown with a side sleeper"
                   data-carousel-main
                   loading="eager"
@@ -2698,8 +2711,21 @@ EDIT GUIDE
                   role="tab"
                   aria-selected="true"
                   data-carousel-thumb
-                  data-src="images/carousel-lifestyle.png"
+                  data-src="images/hero-side-sleeper.jpg"
                   data-alt="ReviveAlign pillow shown with a side sleeper"
+                >
+                  <img src="images/hero-side-sleeper.jpg" alt="" />
+                </button>
+
+                <!-- Image slot: hero lifestyle/product usage image -->
+                <button
+                  class="carousel-thumb"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-carousel-thumb
+                  data-src="images/carousel-lifestyle.png"
+                  data-alt="ReviveAlign pillow lifestyle and product detail image"
                 >
                   <img src="images/carousel-lifestyle.png" alt="" />
                 </button>
