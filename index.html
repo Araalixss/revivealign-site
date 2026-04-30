@@ -19,40 +19,21 @@ EDIT GUIDE
     />
     <!-- Meta Pixel Code -->
     <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = true;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = true;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
-      fbq("init", "1988299131895799");
-      fbq("track", "PageView");
-      fbq("track", "ViewContent", {
-        content_name: "ReviveAlign Side Sleep Pillow",
-        content_type: "product",
-        value: 34.95,
-        currency: "USD",
-      });
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1988299131895799');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent');
     </script>
-    <noscript>
-      <img
-        height="1"
-        width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=1988299131895799&ev=PageView&noscript=1"
-        alt=""
-      />
-    </noscript>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1988299131895799&ev=PageView&noscript=1"
+    /></noscript>
     <!-- End Meta Pixel Code -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -3714,9 +3695,9 @@ EDIT GUIDE
 
       const parseMoney = (value) => Number(String(value || "0").replace(/[^0-9.]/g, ""));
 
-      const trackMetaEvent = (eventName, data = {}) => {
+      const trackMetaEvent = (eventName) => {
         if (typeof fbq !== "function") return;
-        fbq("track", eventName, data);
+        fbq("track", eventName);
       };
 
       const getSelectedBundle = () => {
@@ -3746,13 +3727,7 @@ EDIT GUIDE
         cartDrawer.classList.add("is-open");
         cartDrawer.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
-        trackMetaEvent("AddToCart", {
-          content_name: "ReviveAlign Side Sleep Pillow",
-          content_type: "product",
-          content_ids: [selected.value === "2 Pillows" ? "51909835620672" : "51909835587904"],
-          value: parseMoney(selected.price),
-          currency: "USD",
-        });
+        trackMetaEvent("AddToCart");
         cartCheckout?.focus();
       };
 
@@ -3810,14 +3785,7 @@ EDIT GUIDE
       });
 
       cartCheckout?.addEventListener("click", () => {
-        const selected = getSelectedBundle();
-        trackMetaEvent("InitiateCheckout", {
-          content_name: "ReviveAlign Side Sleep Pillow",
-          content_type: "product",
-          content_ids: [selected.value === "2 Pillows" ? "51909835620672" : "51909835587904"],
-          value: parseMoney(selected.price),
-          currency: "USD",
-        });
+        trackMetaEvent("InitiateCheckout");
       });
 
       cartCloseButtons.forEach((button) => {
