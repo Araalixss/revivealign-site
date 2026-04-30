@@ -2443,7 +2443,7 @@ EDIT GUIDE
                 </div>
                 <ul class="hero-benefits" aria-label="Key product benefits">
                   <li>Reduces hip pressure while side sleeping</li>
-                  <li>Helps prevent knees rubbing together</li>
+                  <li>Helps keep knees from rubbing together</li>
                   <li>Supports spinal alignment overnight</li>
                   <li>Wake up with less stiffness</li>
                 </ul>
@@ -2553,7 +2553,6 @@ EDIT GUIDE
                     name="shipping-protection"
                     id="shipping-protection"
                     data-price="4.99"
-                    checked
                   />
                   <span class="addon-copy">
                     <strong>Shipping Protection</strong>
@@ -2566,10 +2565,10 @@ EDIT GUIDE
               <div class="order-total" aria-live="polite">
                 <div class="order-total-row">
                   <span>Estimated today</span>
-                  <strong id="estimated-total">$39.94</strong>
+                  <strong id="estimated-total">$34.95</strong>
                 </div>
                 <p class="order-total-note" id="estimated-total-note">
-                  Includes optional Shipping Protection. You can remove it before ordering.
+                  Free shipping included today. Optional Shipping Protection can be added.
                 </p>
               </div>
 
@@ -2958,7 +2957,7 @@ EDIT GUIDE
           <div class="cta-band">
             <div class="cta-band-inner">
               <div>
-                <h2>Wake Up With Less Side-Sleeping Pain</h2>
+                <h2>Wake Up Feeling Less Stiff From Side Sleeping</h2>
                 <p>
                   Order your ReviveAlign Relief Pillow now with free shipping and a 60-night
                   comfort trial.
@@ -2980,7 +2979,7 @@ EDIT GUIDE
       <div class="sticky-desktop-inner">
         <div class="sticky-desktop-copy">
           <strong>ReviveAlign Relief Pillow</strong>
-          <span>$39.94 today &middot; Free shipping &middot; 60-night trial</span>
+          <span>$34.95 today &middot; Free shipping &middot; 60-night comfort trial</span>
         </div>
         <a class="button button-primary" href="#buy-box">Try It Tonight</a>
       </div>
@@ -2989,7 +2988,7 @@ EDIT GUIDE
     <aside class="sticky-mobile-cta" aria-label="Mobile quick order bar">
       <div class="sticky-mobile-inner">
         <div class="sticky-mobile-price">
-          <strong>$39.94</strong>
+          <strong>$34.95</strong>
           <span>Free shipping today</span>
         </div>
         <a class="button button-primary" href="#buy-box">Try It Tonight</a>
@@ -3073,7 +3072,7 @@ EDIT GUIDE
           const hasShippingProtection = document.getElementById("shipping-protection")?.checked;
           estimatedTotalNote.textContent = hasShippingProtection
             ? "Includes optional Shipping Protection. You can remove it before ordering."
-            : "Shipping Protection removed. Free shipping still applies today.";
+            : "Free shipping included today. Optional Shipping Protection can be added.";
         }
 
         purchaseCta.textContent = selectedBundle.dataset.cta || "Try It Tonight";
