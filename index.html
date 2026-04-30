@@ -17,6 +17,43 @@ EDIT GUIDE
       name="description"
       content="ReviveAlign is a side-sleeper pillow made to fit between your legs, stay in place overnight, and help reduce pressure on your hips, knees, and lower back."
     />
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = true;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = true;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+      fbq("init", "1988299131895799");
+      fbq("track", "PageView");
+      fbq("track", "ViewContent", {
+        content_name: "ReviveAlign Side Sleep Pillow",
+        content_type: "product",
+        value: 34.95,
+        currency: "USD",
+      });
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1988299131895799&ev=PageView&noscript=1"
+        alt=""
+      />
+    </noscript>
+    <!-- End Meta Pixel Code -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -3677,6 +3714,11 @@ EDIT GUIDE
 
       const parseMoney = (value) => Number(String(value || "0").replace(/[^0-9.]/g, ""));
 
+      const trackMetaEvent = (eventName, data = {}) => {
+        if (typeof fbq !== "function") return;
+        fbq("track", eventName, data);
+      };
+
       const getSelectedBundle = () => {
         const selectedBundle = document.querySelector('input[name="bundle"]:checked');
         const value = selectedBundle?.value || "1 Pillow";
@@ -3699,11 +3741,18 @@ EDIT GUIDE
       };
 
       const openCartDrawer = () => {
-        updateCartDrawer();
+        const selected = updateCartDrawer();
         if (!cartDrawer) return;
         cartDrawer.classList.add("is-open");
         cartDrawer.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
+        trackMetaEvent("AddToCart", {
+          content_name: "ReviveAlign Side Sleep Pillow",
+          content_type: "product",
+          content_ids: [selected.value === "2 Pillows" ? "51909835620672" : "51909835587904"],
+          value: parseMoney(selected.price),
+          currency: "USD",
+        });
         cartCheckout?.focus();
       };
 
@@ -3757,6 +3806,17 @@ EDIT GUIDE
         cta.addEventListener("click", (event) => {
           event.preventDefault();
           openCartDrawer();
+        });
+      });
+
+      cartCheckout?.addEventListener("click", () => {
+        const selected = getSelectedBundle();
+        trackMetaEvent("InitiateCheckout", {
+          content_name: "ReviveAlign Side Sleep Pillow",
+          content_type: "product",
+          content_ids: [selected.value === "2 Pillows" ? "51909835620672" : "51909835587904"],
+          value: parseMoney(selected.price),
+          currency: "USD",
         });
       });
 
