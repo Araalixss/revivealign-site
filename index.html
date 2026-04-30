@@ -3388,6 +3388,10 @@ EDIT GUIDE
       const heroSection = document.querySelector(".hero");
       const stickyDesktopCta = document.getElementById("sticky-desktop-cta");
       const productCarousel = document.querySelector("[data-product-carousel]");
+      const shopifyCartLinks = {
+        "1 Pillow": "https://f1bwhv-vb.myshopify.com/cart/51909835587904:1",
+        "2 Pillows": "https://f1bwhv-vb.myshopify.com/cart/51909835620672:1",
+      };
 
       if (navToggle && siteNav) {
         navToggle.addEventListener("click", () => {
@@ -3427,7 +3431,10 @@ EDIT GUIDE
           estimatedTotalNote.textContent = "Free tracked shipping included today.";
         }
 
-        const checkoutHref = selectedBundle.dataset.checkout || "https://f1bwhv-vb.myshopify.com/cart/51909835587904:1";
+        const checkoutHref =
+          shopifyCartLinks[selectedBundle.value] ||
+          selectedBundle.dataset.checkout ||
+          shopifyCartLinks["1 Pillow"];
 
         purchaseCta.textContent = selectedBundle.dataset.cta || "Try It Tonight";
         checkoutCtas.forEach((cta) => {
@@ -3444,6 +3451,20 @@ EDIT GUIDE
       });
 
       updateOfferState();
+
+      checkoutCtas.forEach((cta) => {
+        cta.addEventListener("click", (event) => {
+          const selectedBundle = document.querySelector('input[name="bundle"]:checked');
+          const checkoutHref =
+            shopifyCartLinks[selectedBundle?.value] ||
+            selectedBundle?.dataset.checkout ||
+            shopifyCartLinks["1 Pillow"];
+
+          cta.setAttribute("href", checkoutHref);
+          event.preventDefault();
+          window.location.href = checkoutHref;
+        });
+      });
 
       faqItems.forEach((item) => {
         item.addEventListener("toggle", () => {
