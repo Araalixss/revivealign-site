@@ -228,8 +228,8 @@ EDIT GUIDE
 
       .hero-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
-        gap: 1.8rem;
+        grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+        gap: 1.65rem;
         align-items: start;
       }
 
@@ -261,6 +261,7 @@ EDIT GUIDE
 
       .hero-copy {
         padding-top: 0;
+        grid-column: 1;
       }
 
       h1,
@@ -342,10 +343,12 @@ EDIT GUIDE
 
       .hero-visual {
         display: grid;
-        gap: 0.22rem;
-        justify-items: stretch;
+        gap: 0.58rem;
+        justify-items: center;
         align-content: start;
         align-self: start;
+        grid-column: 2;
+        grid-row: 1 / span 2;
         width: 100%;
       }
 
@@ -472,6 +475,14 @@ EDIT GUIDE
         display: grid;
         gap: 1.12rem;
         align-content: start;
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        max-width: 41rem;
+      }
+
+      .hero .purchase-card {
+        grid-column: 1;
         width: 100%;
         max-width: 41rem;
       }
@@ -1105,17 +1116,21 @@ EDIT GUIDE
       .product-carousel {
         position: relative;
         min-width: 0;
+        width: 100%;
       }
 
       .carousel-main {
         position: relative;
         overflow: hidden;
         aspect-ratio: 1 / 1;
-        border-radius: 26px;
-        background: linear-gradient(180deg, #ffffff, #f4f1eb);
-        border: 1px solid rgba(39, 73, 107, 0.1);
+        border-radius: 30px;
+        background:
+          radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.96), transparent 34%),
+          linear-gradient(180deg, #ffffff 0%, #f5f1ea 100%);
+        border: 1px solid rgba(39, 73, 107, 0.12);
         box-shadow:
-          0 22px 44px rgba(21, 48, 74, 0.12),
+          0 30px 58px rgba(21, 48, 74, 0.14),
+          0 10px 24px rgba(21, 48, 74, 0.06),
           inset 0 1px 0 rgba(255, 255, 255, 0.72);
         touch-action: pan-y;
       }
@@ -1125,6 +1140,7 @@ EDIT GUIDE
         height: 100%;
         object-fit: cover;
         object-position: center;
+        background: #ffffff;
         transition:
           opacity 180ms ease,
           transform 260ms ease;
@@ -1227,6 +1243,18 @@ EDIT GUIDE
         box-shadow:
           0 0 0 3px rgba(120, 147, 180, 0.16),
           0 14px 24px rgba(21, 48, 74, 0.08);
+      }
+
+      .hero-visual .product-carousel {
+        max-width: 34.5rem;
+      }
+
+      .hero-visual .carousel-main {
+        border-radius: 32px;
+      }
+
+      .hero-visual .carousel-thumbs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .pain-explain {
@@ -1955,8 +1983,8 @@ EDIT GUIDE
 
       @media (max-width: 1080px) {
         .hero-grid {
-          grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-          gap: 1.35rem;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+          gap: 1.2rem;
         }
 
         .guarantee-wrap,
@@ -2027,6 +2055,8 @@ EDIT GUIDE
         .hero-copy {
           max-width: 100%;
           padding-top: 0;
+          grid-column: 1;
+          grid-row: 1;
         }
 
         .hero {
@@ -2041,11 +2071,18 @@ EDIT GUIDE
         .hero-visual {
           justify-items: center;
           gap: 0.2rem;
+          grid-column: 1;
+          grid-row: 2;
         }
 
         .hero-offer {
-          gap: 0.72rem;
-          margin-inline: auto;
+          display: contents;
+        }
+
+        .hero .purchase-card {
+          grid-column: 1;
+          grid-row: 3;
+          max-width: 41rem;
         }
 
         .hero-image-stage {
@@ -2602,21 +2639,70 @@ EDIT GUIDE
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-visual">
-            <div class="hero-image-stage">
-              <figure class="hero-image-frame image-shell">
-                <!-- Replace this hero image with your main lifestyle/product photo -->
+            <div class="product-carousel" data-product-carousel>
+              <div class="carousel-main" data-carousel-stage>
+                <!-- Replace carousel image sources here when updating product photography. -->
                 <img
-                src="images/hero-side-sleeper.jpg"
-                alt="ReviveAlign side sleeper pillow in use while side sleeping"
-                data-placeholder="images/hero-side-sleeper.jpg"
-                loading="eager"
-                fetchpriority="high"
+                  src="images/carousel-lifestyle.png"
+                  alt="ReviveAlign pillow shown with a side sleeper"
+                  data-carousel-main
+                  loading="eager"
+                  fetchpriority="high"
                 />
-                <figcaption class="image-note">
-                  <strong>Replace hero image</strong>
-                  <span>images/hero-side-sleeper.jpg</span>
-                </figcaption>
-              </figure>
+                <button class="carousel-arrow carousel-arrow--prev" type="button" data-carousel-prev aria-label="Previous product image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"></path>
+                  </svg>
+                </button>
+                <button class="carousel-arrow carousel-arrow--next" type="button" data-carousel-next aria-label="Next product image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 6l6 6-6 6"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="carousel-thumbs" role="tablist" aria-label="Choose product image">
+                <!-- Image slot: hero lifestyle image -->
+                <button
+                  class="carousel-thumb is-active"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                  data-carousel-thumb
+                  data-src="images/carousel-lifestyle.png"
+                  data-alt="ReviveAlign pillow shown with a side sleeper"
+                >
+                  <img src="images/carousel-lifestyle.png" alt="" />
+                </button>
+
+                <!-- Image slot: product features image -->
+                <button
+                  class="carousel-thumb"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-carousel-thumb
+                  data-src="images/carousel-features.png"
+                  data-alt="ReviveAlign pillow product features and strap details"
+                >
+                  <img src="images/carousel-features.png" alt="" />
+                </button>
+
+                <!-- Image slot: dimensions image -->
+                <button
+                  class="carousel-thumb"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-carousel-thumb
+                  data-src="images/c3.png"
+                  data-alt="ReviveAlign pillow dimensions graphic"
+                >
+                  <img src="images/c3.png" alt="" />
+                </button>
+
+                <!-- Add more carousel-thumb buttons here for in-use sleeping or comparison images. -->
+              </div>
             </div>
             <div class="hero-image-badge">Loved by Side Sleepers</div>
           </div>
@@ -2764,91 +2850,6 @@ EDIT GUIDE
                 <span>Estimated Delivery 7-12 Business Days</span>
               </div>
             </aside>
-          </div>
-        </div>
-      </section>
-
-      <!-- Product gallery carousel: insert/update this section directly after the hero section. -->
-      <section class="product-gallery" aria-labelledby="product-gallery-title">
-        <div class="container">
-          <div class="gallery-shell">
-            <div class="gallery-copy">
-              <div class="section-kicker">Product Gallery</div>
-              <h2 id="product-gallery-title">See ReviveAlign Up Close</h2>
-              <p>
-                A closer look at the shape, strap, cover, and between-leg support design built
-                for side sleepers.
-              </p>
-              <ul class="gallery-points" aria-label="Gallery highlights">
-                <li>Contoured shape for comfortable knee and hip support</li>
-                <li>Secure strap helps keep the pillow in place overnight</li>
-                <li>Compact size made for nightly use or travel</li>
-              </ul>
-            </div>
-
-            <div class="product-carousel" data-product-carousel>
-              <div class="carousel-main" data-carousel-stage>
-                <!-- Replace carousel image sources here when updating product photography. -->
-                <img
-                  src="images/carousel-lifestyle.png"
-                  alt="ReviveAlign pillow shown with a side sleeper"
-                  data-carousel-main
-                />
-                <button class="carousel-arrow carousel-arrow--prev" type="button" data-carousel-prev aria-label="Previous product image">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M15 18l-6-6 6-6"></path>
-                  </svg>
-                </button>
-                <button class="carousel-arrow carousel-arrow--next" type="button" data-carousel-next aria-label="Next product image">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 6l6 6-6 6"></path>
-                  </svg>
-                </button>
-              </div>
-
-              <div class="carousel-thumbs" role="tablist" aria-label="Choose product image">
-                <!-- Image slot: hero lifestyle image -->
-                <button
-                  class="carousel-thumb is-active"
-                  type="button"
-                  role="tab"
-                  aria-selected="true"
-                  data-carousel-thumb
-                  data-src="images/carousel-lifestyle.png"
-                  data-alt="ReviveAlign pillow shown with a side sleeper"
-                >
-                  <img src="images/carousel-lifestyle.png" alt="" />
-                </button>
-
-                <!-- Image slot: product features image -->
-                <button
-                  class="carousel-thumb"
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                  data-carousel-thumb
-                  data-src="images/carousel-features.png"
-                  data-alt="ReviveAlign pillow product features and strap details"
-                >
-                  <img src="images/carousel-features.png" alt="" />
-                </button>
-
-                <!-- Image slot: dimensions image -->
-                <button
-                  class="carousel-thumb"
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                  data-carousel-thumb
-                  data-src="images/carousel-dimensions.png"
-                  data-alt="ReviveAlign pillow dimensions graphic"
-                >
-                  <img src="images/carousel-dimensions.png" alt="" />
-                </button>
-
-                <!-- Add more carousel-thumb buttons here for in-use sleeping or comparison images. -->
-              </div>
-            </div>
           </div>
         </div>
       </section>
