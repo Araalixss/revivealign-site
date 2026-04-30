@@ -2682,7 +2682,11 @@ EDIT GUIDE
             <a href="#reviews">Reviews</a>
             <a href="#faq">FAQ</a>
           </nav>
-          <a class="button button-secondary" href="#buy-box">Order Now</a>
+          <a
+            class="button button-secondary"
+            href="https://f1bwhv-vb.myshopify.com/cart/51909835587904:1"
+            data-checkout-cta
+          >Order Now</a>
           <button
             class="header-toggle"
             type="button"
@@ -2912,6 +2916,7 @@ EDIT GUIDE
                 class="button button-primary purchase-cta"
                 id="purchase-cta"
                 href="https://f1bwhv-vb.myshopify.com/cart/51909835587904:1"
+                data-checkout-cta
               >
                 Try It Tonight
               </a>
@@ -3308,7 +3313,11 @@ EDIT GUIDE
                   <span>Save $15 Today</span>
                 </div>
               </div>
-              <a class="button button-secondary" href="#buy-box">Order Now</a>
+              <a
+                class="button button-secondary"
+                href="https://f1bwhv-vb.myshopify.com/cart/51909835587904:1"
+                data-checkout-cta
+              >Order Now</a>
             </div>
           </div>
         </div>
@@ -3321,7 +3330,11 @@ EDIT GUIDE
           <strong>ReviveAlign Side Sleep Pillow</strong>
           <span>$34.95 today &middot; Free shipping &middot; 60-night comfort trial</span>
         </div>
-        <a class="button button-primary" href="#buy-box">Try It Tonight</a>
+        <a
+          class="button button-primary"
+          href="https://f1bwhv-vb.myshopify.com/cart/51909835587904:1"
+          data-checkout-cta
+        >Try It Tonight</a>
       </div>
     </aside>
 
@@ -3331,7 +3344,11 @@ EDIT GUIDE
           <strong>$34.95</strong>
           <span>Free shipping today</span>
         </div>
-        <a class="button button-primary" href="#buy-box">Try It Tonight</a>
+        <a
+          class="button button-primary"
+          href="https://f1bwhv-vb.myshopify.com/cart/51909835587904:1"
+          data-checkout-cta
+        >Try It Tonight</a>
       </div>
     </aside>
 
@@ -3360,6 +3377,7 @@ EDIT GUIDE
       const estimatedTotal = document.getElementById("estimated-total");
       const estimatedTotalNote = document.getElementById("estimated-total-note");
       const purchaseCta = document.getElementById("purchase-cta");
+      const checkoutCtas = document.querySelectorAll("[data-checkout-cta]");
       const stickyMobilePrice = document.querySelector(".sticky-mobile-price strong");
       const stickyMobileNote = document.querySelector(".sticky-mobile-price span");
       const stickyDesktopNote = document.querySelector(".sticky-desktop-copy span");
@@ -3409,12 +3427,16 @@ EDIT GUIDE
           estimatedTotalNote.textContent = "Free tracked shipping included today.";
         }
 
+        const checkoutHref = selectedBundle.dataset.checkout || "https://f1bwhv-vb.myshopify.com/cart/51909835587904:1";
+
         purchaseCta.textContent = selectedBundle.dataset.cta || "Try It Tonight";
-        purchaseCta.setAttribute("href", selectedBundle.dataset.checkout || "#buy-box");
-        purchaseCta.setAttribute(
-          "aria-label",
-          `${purchaseCta.textContent} - ${selectedBundle.value} estimated today ${formatMoney(todayTotal)}`
-        );
+        checkoutCtas.forEach((cta) => {
+          cta.setAttribute("href", checkoutHref);
+          cta.setAttribute(
+            "aria-label",
+            `${cta.textContent.trim()} - ${selectedBundle.value} estimated today ${formatMoney(todayTotal)}`
+          );
+        });
       };
 
       bundleInputs.forEach((input) => {
