@@ -1041,6 +1041,194 @@ EDIT GUIDE
         background: rgba(46, 125, 105, 0.72);
       }
 
+      .product-gallery {
+        padding: 2.6rem 0 2.9rem;
+      }
+
+      .gallery-shell {
+        display: grid;
+        grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+        gap: 1.55rem;
+        align-items: center;
+        padding: 1.2rem;
+        border-radius: 30px;
+        background:
+          radial-gradient(circle at 14% 10%, rgba(255, 255, 255, 0.92), transparent 34%),
+          linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(241, 238, 231, 0.76));
+        border: 1px solid rgba(39, 73, 107, 0.1);
+        box-shadow: var(--shadow-md);
+      }
+
+      .gallery-copy {
+        padding: 0.4rem 0.4rem 0.4rem 0.2rem;
+      }
+
+      .gallery-copy h2 {
+        margin-top: 0.45rem;
+        font-size: clamp(2rem, 3.2vw, 3.05rem);
+        line-height: 1.06;
+        max-width: 28rem;
+      }
+
+      .gallery-copy p {
+        margin: 0.72rem 0 0;
+        max-width: 31rem;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .gallery-points {
+        list-style: none;
+        display: grid;
+        gap: 0.58rem;
+        margin: 1rem 0 0;
+        padding: 0;
+      }
+
+      .gallery-points li {
+        display: flex;
+        gap: 0.6rem;
+        align-items: flex-start;
+        color: var(--text);
+        font-size: 0.93rem;
+        font-weight: 750;
+      }
+
+      .gallery-points li::before {
+        content: "\2713";
+        flex: 0 0 auto;
+        color: var(--accent-deep);
+        font-weight: 900;
+      }
+
+      .product-carousel {
+        position: relative;
+        min-width: 0;
+      }
+
+      .carousel-main {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1 / 1;
+        border-radius: 26px;
+        background: linear-gradient(180deg, #ffffff, #f4f1eb);
+        border: 1px solid rgba(39, 73, 107, 0.1);
+        box-shadow:
+          0 22px 44px rgba(21, 48, 74, 0.12),
+          inset 0 1px 0 rgba(255, 255, 255, 0.72);
+        touch-action: pan-y;
+      }
+
+      .carousel-main img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition:
+          opacity 180ms ease,
+          transform 260ms ease;
+      }
+
+      .carousel-main.is-changing img {
+        opacity: 0.12;
+        transform: scale(1.015);
+      }
+
+      .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+        width: 46px;
+        height: 46px;
+        border: 1px solid rgba(39, 73, 107, 0.12);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.88);
+        color: var(--accent-deep);
+        box-shadow: var(--shadow-sm);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transform: translateY(-50%);
+        transition:
+          transform 160ms ease,
+          background 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      .carousel-arrow:hover,
+      .carousel-arrow:focus-visible {
+        background: #ffffff;
+        box-shadow: var(--shadow-md);
+      }
+
+      .carousel-arrow:focus-visible {
+        outline: 3px solid rgba(120, 147, 180, 0.35);
+        outline-offset: 2px;
+      }
+
+      .carousel-arrow--prev {
+        left: 0.85rem;
+      }
+
+      .carousel-arrow--next {
+        right: 0.85rem;
+      }
+
+      .carousel-arrow svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .carousel-thumbs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.72rem;
+        margin-top: 0.82rem;
+      }
+
+      .carousel-thumb {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1 / 1;
+        padding: 0;
+        border-radius: 18px;
+        border: 1px solid rgba(39, 73, 107, 0.12);
+        background: rgba(255, 255, 255, 0.76);
+        box-shadow: 0 10px 20px rgba(21, 48, 74, 0.06);
+        cursor: pointer;
+        transition:
+          border-color 160ms ease,
+          transform 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      .carousel-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .carousel-thumb:hover,
+      .carousel-thumb:focus-visible {
+        transform: translateY(-1px);
+        box-shadow: 0 14px 24px rgba(21, 48, 74, 0.08);
+      }
+
+      .carousel-thumb:focus-visible {
+        outline: 3px solid rgba(120, 147, 180, 0.35);
+        outline-offset: 2px;
+      }
+
+      .carousel-thumb.is-active {
+        border-color: rgba(39, 73, 107, 0.42);
+        box-shadow:
+          0 0 0 3px rgba(120, 147, 180, 0.16),
+          0 14px 24px rgba(21, 48, 74, 0.08);
+      }
+
       .pain-explain {
         padding: 3.1rem 0;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(236, 242, 248, 0.36));
@@ -1825,6 +2013,7 @@ EDIT GUIDE
         }
 
         .hero-grid,
+        .gallery-shell,
         .pain-explain-grid,
         .comparison-grid,
         .reviews-grid,
@@ -1892,6 +2081,71 @@ EDIT GUIDE
           justify-self: center;
         }
 
+        .product-gallery {
+          padding: 2.1rem 0 2.35rem;
+        }
+
+        .gallery-shell {
+          gap: 1rem;
+          padding: 0.9rem;
+          border-radius: 24px;
+        }
+
+        .gallery-copy {
+          order: 2;
+          padding: 0.2rem 0.25rem 0.35rem;
+          text-align: center;
+        }
+
+        .gallery-copy h2 {
+          max-width: none;
+          font-size: clamp(1.9rem, 7vw, 2.65rem);
+        }
+
+        .gallery-copy p {
+          margin-left: auto;
+          margin-right: auto;
+          font-size: 0.96rem;
+          line-height: 1.65;
+        }
+
+        .gallery-points {
+          max-width: 23rem;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: left;
+        }
+
+        .product-carousel {
+          order: 1;
+        }
+
+        .carousel-main {
+          border-radius: 22px;
+        }
+
+        .carousel-arrow {
+          width: 40px;
+          height: 40px;
+        }
+
+        .carousel-arrow--prev {
+          left: 0.55rem;
+        }
+
+        .carousel-arrow--next {
+          right: 0.55rem;
+        }
+
+        .carousel-thumbs {
+          gap: 0.52rem;
+          margin-top: 0.62rem;
+        }
+
+        .carousel-thumb {
+          border-radius: 14px;
+        }
+
         .pain-explain {
           padding: 2.6rem 0;
         }
@@ -1946,6 +2200,31 @@ EDIT GUIDE
 
         section {
           padding: 3.3rem 0;
+        }
+
+        .product-gallery {
+          padding: 1.75rem 0 2.05rem;
+        }
+
+        .gallery-shell {
+          padding: 0.68rem;
+        }
+
+        .gallery-copy h2 {
+          font-size: clamp(1.8rem, 8vw, 2.35rem);
+        }
+
+        .carousel-main {
+          border-radius: 20px;
+        }
+
+        .carousel-arrow {
+          width: 36px;
+          height: 36px;
+        }
+
+        .carousel-thumbs {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
         .pain-explain-copy {
@@ -2489,6 +2768,91 @@ EDIT GUIDE
         </div>
       </section>
 
+      <!-- Product gallery carousel: insert/update this section directly after the hero section. -->
+      <section class="product-gallery" aria-labelledby="product-gallery-title">
+        <div class="container">
+          <div class="gallery-shell">
+            <div class="gallery-copy">
+              <div class="section-kicker">Product Gallery</div>
+              <h2 id="product-gallery-title">See ReviveAlign Up Close</h2>
+              <p>
+                A closer look at the shape, strap, cover, and between-leg support design built
+                for side sleepers.
+              </p>
+              <ul class="gallery-points" aria-label="Gallery highlights">
+                <li>Contoured shape for comfortable knee and hip support</li>
+                <li>Secure strap helps keep the pillow in place overnight</li>
+                <li>Compact size made for nightly use or travel</li>
+              </ul>
+            </div>
+
+            <div class="product-carousel" data-product-carousel>
+              <div class="carousel-main" data-carousel-stage>
+                <!-- Replace carousel image sources here when updating product photography. -->
+                <img
+                  src="images/carousel-lifestyle.png"
+                  alt="ReviveAlign pillow shown with a side sleeper"
+                  data-carousel-main
+                />
+                <button class="carousel-arrow carousel-arrow--prev" type="button" data-carousel-prev aria-label="Previous product image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"></path>
+                  </svg>
+                </button>
+                <button class="carousel-arrow carousel-arrow--next" type="button" data-carousel-next aria-label="Next product image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 6l6 6-6 6"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="carousel-thumbs" role="tablist" aria-label="Choose product image">
+                <!-- Image slot: hero lifestyle image -->
+                <button
+                  class="carousel-thumb is-active"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                  data-carousel-thumb
+                  data-src="images/carousel-lifestyle.png"
+                  data-alt="ReviveAlign pillow shown with a side sleeper"
+                >
+                  <img src="images/carousel-lifestyle.png" alt="" />
+                </button>
+
+                <!-- Image slot: product features image -->
+                <button
+                  class="carousel-thumb"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-carousel-thumb
+                  data-src="images/carousel-features.png"
+                  data-alt="ReviveAlign pillow product features and strap details"
+                >
+                  <img src="images/carousel-features.png" alt="" />
+                </button>
+
+                <!-- Image slot: dimensions image -->
+                <button
+                  class="carousel-thumb"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  data-carousel-thumb
+                  data-src="images/carousel-dimensions.png"
+                  data-alt="ReviveAlign pillow dimensions graphic"
+                >
+                  <img src="images/carousel-dimensions.png" alt="" />
+                </button>
+
+                <!-- Add more carousel-thumb buttons here for in-use sleeping or comparison images. -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="pain-explain" aria-labelledby="pain-explain-title">
         <div class="container pain-explain-grid">
           <div>
@@ -2928,6 +3292,7 @@ EDIT GUIDE
       const reviewsToggle = document.getElementById("reviews-toggle");
       const heroSection = document.querySelector(".hero");
       const stickyDesktopCta = document.getElementById("sticky-desktop-cta");
+      const productCarousel = document.querySelector("[data-product-carousel]");
 
       if (navToggle && siteNav) {
         navToggle.addEventListener("click", () => {
@@ -3010,6 +3375,60 @@ EDIT GUIDE
         updateStickyDesktopCta();
         window.addEventListener("scroll", updateStickyDesktopCta, { passive: true });
         window.addEventListener("resize", updateStickyDesktopCta);
+      }
+
+      if (productCarousel) {
+        const carouselStage = productCarousel.querySelector("[data-carousel-stage]");
+        const carouselMain = productCarousel.querySelector("[data-carousel-main]");
+        const carouselThumbs = Array.from(productCarousel.querySelectorAll("[data-carousel-thumb]"));
+        const carouselPrev = productCarousel.querySelector("[data-carousel-prev]");
+        const carouselNext = productCarousel.querySelector("[data-carousel-next]");
+        let activeCarouselIndex = 0;
+        let touchStartX = 0;
+
+        const showCarouselImage = (index) => {
+          if (!carouselMain || carouselThumbs.length === 0) return;
+          activeCarouselIndex = (index + carouselThumbs.length) % carouselThumbs.length;
+          const activeThumb = carouselThumbs[activeCarouselIndex];
+
+          carouselStage?.classList.add("is-changing");
+          window.setTimeout(() => {
+            carouselMain.src = activeThumb.dataset.src;
+            carouselMain.alt = activeThumb.dataset.alt || "ReviveAlign product image";
+            carouselThumbs.forEach((thumb, thumbIndex) => {
+              const isActive = thumbIndex === activeCarouselIndex;
+              thumb.classList.toggle("is-active", isActive);
+              thumb.setAttribute("aria-selected", String(isActive));
+            });
+            carouselStage?.classList.remove("is-changing");
+          }, 110);
+        };
+
+        carouselThumbs.forEach((thumb, index) => {
+          thumb.addEventListener("click", () => showCarouselImage(index));
+        });
+
+        carouselPrev?.addEventListener("click", () => showCarouselImage(activeCarouselIndex - 1));
+        carouselNext?.addEventListener("click", () => showCarouselImage(activeCarouselIndex + 1));
+
+        carouselStage?.addEventListener(
+          "touchstart",
+          (event) => {
+            touchStartX = event.changedTouches[0]?.clientX || 0;
+          },
+          { passive: true }
+        );
+
+        carouselStage?.addEventListener(
+          "touchend",
+          (event) => {
+            const touchEndX = event.changedTouches[0]?.clientX || 0;
+            const swipeDistance = touchEndX - touchStartX;
+            if (Math.abs(swipeDistance) < 42) return;
+            showCarouselImage(activeCarouselIndex + (swipeDistance < 0 ? 1 : -1));
+          },
+          { passive: true }
+        );
       }
 
       imageShells.forEach((shell) => {
