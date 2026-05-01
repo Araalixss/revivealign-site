@@ -1758,6 +1758,95 @@ fbq('track', 'ViewContent');
         cursor: pointer;
       }
 
+      .free-shipping-banner {
+        margin-top: 0.92rem;
+        display: grid;
+        gap: 0.25rem;
+        padding: 0.86rem 0.95rem;
+        border-radius: 18px;
+        background:
+          radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 42%),
+          linear-gradient(135deg, #1f4770 0%, #2f6596 100%);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: 0 16px 28px rgba(31, 71, 112, 0.2);
+      }
+
+      .free-shipping-banner strong {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+      }
+
+      .free-shipping-banner code {
+        padding: 0.22rem 0.5rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.16);
+        color: #ffffff;
+        font-family: "Manrope", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+      }
+
+      .free-shipping-banner span {
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.8rem;
+        font-weight: 750;
+      }
+
+      .trial-shield {
+        margin-top: 0.72rem;
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        padding: 0.78rem 0.85rem;
+        border-radius: 16px;
+        background: rgba(236, 242, 248, 0.76);
+        border: 1px solid rgba(39, 73, 107, 0.1);
+        color: var(--accent-deep);
+        font-size: 0.84rem;
+        font-weight: 850;
+      }
+
+      .trial-shield svg {
+        flex: 0 0 auto;
+        width: 22px;
+        height: 22px;
+      }
+
+      .cart-trust-badges {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.55rem;
+        margin-top: 1rem;
+      }
+
+      .cart-trust-badges span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.42rem;
+        min-height: 40px;
+        padding: 0.42rem 0.55rem;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(39, 73, 107, 0.1);
+        color: var(--accent-deep);
+        font-size: 0.78rem;
+        font-weight: 850;
+        text-align: center;
+      }
+
+      .cart-trust-badges svg {
+        flex: 0 0 auto;
+        width: 16px;
+        height: 16px;
+      }
+
       .comparison-card h3 {
         margin-top: 0.95rem;
         font-size: 1.72rem;
@@ -3139,6 +3228,14 @@ fbq('track', 'ViewContent');
                 </p>
               </div>
 
+              <div class="free-shipping-banner" aria-label="Free shipping promotion">
+                <strong>
+                  FREE SHIPPING
+                  <code>FREESHIP</code>
+                </strong>
+                <span>Promo code automatically applied at checkout.</span>
+              </div>
+
               <a
                 class="button button-primary purchase-cta"
                 id="purchase-cta"
@@ -3147,6 +3244,13 @@ fbq('track', 'ViewContent');
               >
                 Try It Tonight
               </a>
+              <div class="trial-shield">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M12 3l7 3v5c0 5-3.3 8.5-7 10-3.7-1.5-7-5-7-10V6l7-3z"></path>
+                  <path d="M9 12l2 2 4-5"></path>
+                </svg>
+                <span>60-Night Risk-Free Trial</span>
+              </div>
               <div class="trust-row">
                 <span>Loved by 12,000+ side sleepers</span>
                 <span>4.8 average rating</span>
@@ -3613,7 +3717,23 @@ fbq('track', 'ViewContent');
               <span>Subtotal</span>
               <strong data-cart-subtotal>$34.95</strong>
             </div>
-            <p class="cart-summary-note">Free tracked shipping included today.</p>
+            <p class="cart-summary-note">Code FREESHIP applied for free tracked shipping.</p>
+          </div>
+
+          <div class="cart-trust-badges" aria-label="Cart trust badges">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 3l7 3v5c0 5-3.3 8.5-7 10-3.7-1.5-7-5-7-10V6l7-3z"></path>
+                <path d="M9 12l2 2 4-5"></path>
+              </svg>
+              Secure Checkout
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 3l7 3v5c0 5-3.3 8.5-7 10-3.7-1.5-7-5-7-10V6l7-3z"></path>
+              </svg>
+              60-Night Guarantee
+            </span>
           </div>
         </div>
 
