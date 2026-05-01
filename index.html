@@ -1647,12 +1647,36 @@ fbq('track', 'ViewContent');
         font-weight: 850;
       }
 
-      .cart-item-meta {
-        display: block;
+      .cart-item-meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.38rem 0.55rem;
         margin-top: 0.28rem;
+      }
+
+      .cart-item-meta {
+        display: inline-flex;
+        align-items: center;
         color: var(--muted);
         font-size: 0.86rem;
         font-weight: 750;
+      }
+
+      .cart-item-rating {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.28rem;
+        color: var(--accent-deep);
+        font-size: 0.78rem;
+        font-weight: 850;
+        white-space: nowrap;
+      }
+
+      .cart-item-rating-stars {
+        color: #e5a93f;
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
       }
 
       .cart-item-price {
@@ -3651,7 +3675,13 @@ fbq('track', 'ViewContent');
             </div>
             <div class="cart-item-copy">
               <strong class="cart-item-title" data-cart-title>ReviveAlign Side Sleep Pillow</strong>
-              <span class="cart-item-meta" data-cart-bundle>1 Pillow</span>
+              <div class="cart-item-meta-row">
+                <span class="cart-item-meta" data-cart-bundle>1 Pillow</span>
+                <span class="cart-item-rating" aria-label="Rated 4.8 out of 5 based on 1,200 plus reviews">
+                  <span class="cart-item-rating-stars" aria-hidden="true">★★★★★</span>
+                  4.8/5 · 1,200+ reviews
+                </span>
+              </div>
               <span class="cart-item-price" data-cart-price>$34.95</span>
             </div>
           </div>
